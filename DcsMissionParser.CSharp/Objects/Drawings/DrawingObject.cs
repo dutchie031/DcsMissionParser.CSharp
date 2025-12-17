@@ -20,21 +20,6 @@ namespace DcsMissionParser.CSharp.Objects.Drawings
 
         public required PrimitiveType PrimitiveType { get; set; }
 
-
-        public bool Visible { get; set; }
-        public string? Name { get; set; }
-        public string? LayerName { get; set; }
-        public double MapY { get; set; }
-        public double MapX { get; set; }
-        public bool Closed { get; set; }
-        public int Thickness { get; set; }
-        public string? Color { get; set; }
-        public string? Style { get; set; }
-        public string? LineMode { get; set; }
-        public List<Vec2> Points { get; set; } = [];
-
-
-
     }
 
     public enum PrimitiveType
@@ -63,7 +48,14 @@ namespace DcsMissionParser.CSharp.Objects.Drawings
 
         public static Polygon? FromLuaTable(LuaTable table)
         {
+            string? polyMode = table["polygonMode"].Read<string>();
+            if (!Enum.TryParse<PolygonMode>(polyMode, out var parsedMode))
+                return null;
 
+            return parsedMode switch
+            {
+                _ => null
+            };
         }
 
         public PolygonMode PolygonMode { get; set; }
@@ -74,6 +66,32 @@ namespace DcsMissionParser.CSharp.Objects.Drawings
         public Circle() : base()
         {
             PolygonMode = PolygonMode.Circle;
+        }
+    }
+
+    public class Free : Polygon 
+    {
+        public Free() : base()
+        {
+            PolygonMode = PolygonMode.Free;
+        }
+    }
+
+    public class Oval : Polygon 
+    {
+        public Oval() : base() 
+        {
+            PolygonMode = PolygonMode.Oval;
+        }
+
+
+    }
+
+    public class Rect : Polygon 
+    {
+        public Rect() : base() 
+        {
+            PolygonMode = PolygonMode.Rect;
         }
     }
 

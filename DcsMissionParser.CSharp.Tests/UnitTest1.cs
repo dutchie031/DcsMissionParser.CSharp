@@ -2,9 +2,16 @@
 {
     public class UnitTest1
     {
+
+        string file = "../../../../.ref/TestDrawings.miz";
+
         [Fact]
-        public void Test1()
+        public async Task FullParse()
         {
+            byte[] bytes = File.ReadAllBytes(file);
+
+
+            var obj = await MizParser.TryParse(bytes);
 
         }
     }

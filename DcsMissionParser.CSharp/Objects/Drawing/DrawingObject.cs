@@ -1,24 +1,15 @@
-﻿using DcsMissionParser.CSharp.Objects.Commons;
+﻿using DcsMissionParser.CSharp.Annotations;
+using DcsMissionParser.CSharp.Objects.Commons;
 using Lua;
 
 namespace DcsMissionParser.CSharp.Objects.Drawings
 {
     public abstract class DrawingObject
     {
-        public static DrawingObject? FromLuaTable(LuaTable table) 
-        {
-            string? primitiveType = table["primitiveType"].Read<string>();
-            if (!Enum.TryParse<PrimitiveType>(primitiveType, out var parsedType))
-                return null;
-
-            return parsedType switch
-            {
-                PrimitiveType.Polygon => Polygon.FromLuaTable(table),
-                _ => null,
-            };
-        }
-
+        [LuaKey("primitiveType")]
         public required PrimitiveType PrimitiveType { get; set; }
+        
+        
 
     }
 
@@ -39,25 +30,14 @@ namespace DcsMissionParser.CSharp.Objects.Drawings
         Oval,
         Rect
     }
+    
     public abstract class Polygon : DrawingObject
     {
         public Polygon() 
         {
             PrimitiveType = PrimitiveType.Polygon;
         }
-
-        public static Polygon? FromLuaTable(LuaTable table)
-        {
-            string? polyMode = table["polygonMode"].Read<string>();
-            if (!Enum.TryParse<PolygonMode>(polyMode, out var parsedMode))
-                return null;
-
-            return parsedMode switch
-            {
-                _ => null
-            };
-        }
-
+        
         public PolygonMode PolygonMode { get; set; }
     }
 

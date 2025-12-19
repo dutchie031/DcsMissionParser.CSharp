@@ -31,6 +31,7 @@ namespace DcsMissionParser.CSharp.Objects.Drawings
         Rect
     }
     
+    [LuaClassByEnum<PrimitiveType>(PrimitiveType.Polygon, "primitieType")]
     public abstract class Polygon : DrawingObject
     {
         public Polygon() 
@@ -38,9 +39,11 @@ namespace DcsMissionParser.CSharp.Objects.Drawings
             PrimitiveType = PrimitiveType.Polygon;
         }
         
+        [LuaKey("polygonMode")]
         public PolygonMode PolygonMode { get; set; }
     }
 
+    [LuaClassByEnum<PolygonMode>(PolygonMode.Circle, "polygonMode")]
     public class Circle : Polygon
     {
         public Circle() : base()

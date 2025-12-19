@@ -111,6 +111,21 @@ namespace DcsMissionParser.CSharp
                         if(table[luaKey].TryRead(out string s))
                             property.SetValue(instance, s);
                     } 
+                    else if(propertyType.IsClass && propertyType.IsAbstract)
+                    {
+                        IEnumerable<Type> subClasses = Assembly.GetExecutingAssembly()
+                        .GetTypes()
+                        .Where(t => t.IsSubclassOf(propertyType))
+                        .Where(t => t.GetCustomAttributes(typeof(LuaClassByEnum<>), false).Any());
+
+                        foreach(Type subClass in Assembly.GetExecutingAssembly().GetTypes().Where(t => t.IsSubclassOf(propertyType) && ))
+                        {
+
+
+
+                            return ParseTable(table)
+                        }
+                    }
                     else if (propertyType.IsClass || propertyType.IsList())
                     {
                         if(table[luaKey].TryRead(out LuaTable childTable))

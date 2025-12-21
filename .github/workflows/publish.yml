@@ -39,6 +39,9 @@ jobs:
 
           dry_run: true
 
+      - name: Display new version
+        run: echo "New version is ${{ steps.tag_version.outputs.new_tag }}"
+
       - name: Restore dependencies
         run: dotnet restore
 

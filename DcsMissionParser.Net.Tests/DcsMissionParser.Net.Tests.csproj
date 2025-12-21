@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DcsMissionParser.CSharp\DcsMissionParser.Net.csproj" />
+    <ProjectReference Include="..\DcsMissionParser.Net\DcsMissionParser.Net.csproj" />
   </ItemGroup>
 
   <ItemGroup>

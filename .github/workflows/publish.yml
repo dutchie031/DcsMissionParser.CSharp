@@ -46,19 +46,19 @@ jobs:
       - name: Display new version
         run: echo "New version is ${{ steps.tag_version.outputs.new_tag }}"
 
-      # - name: Restore dependencies
-      #   run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore
 
-      # - name: Build solution
-      #   run: dotnet build --no-restore --configuration Release
+      - name: Build solution
+        run: dotnet build --no-restore --configuration Release
       
-      # - name: Run tests
-      #   run: dotnet test --no-build --configuration Release --verbosity normal
+      - name: Run tests
+        run: dotnet test --no-build --configuration Release --verbosity normal
 
-      # - name: Publish NuGet package
-      #   run: |
-      #     dotnet pack DcsMissionParser.Net/DcsMissionParser.Net.csproj --no-build --configuration Release -o ./nupkg /p:PackageVersion=${{ steps.tag_version.outputs.new_tag }}
-      #     dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      - name: Publish NuGet package
+        run: |
+          dotnet pack DcsMissionParser.Net/DcsMissionParser.Net.csproj --no-build --configuration Release -o ./nupkg /p:PackageVersion=${{ steps.tag_version.outputs.new_tag }}
+          dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
 
 
 

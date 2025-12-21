@@ -1,0 +1,60 @@
+name: Publish
+on: 
+  workflow_dispatch:
+    inputs:
+      rc: 
+        type: boolean
+      patch_size:
+        type: choice
+        description: Size Of version change
+        options:
+          - major
+          - minor
+          - patch
+    
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Bump version
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          release_branches : null
+          pre_release_branches : "*"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_bump: ${{ github.event.inputs.patch_size }}
+          default_prerelease_bump : ${{ github.event.inputs.patch_size }}
+          tag_prefix: ""
+          append_to_pre_release_tag: ${{ github.event.inputs.rc && 'rc' || '' }}
+
+          dry_run: true
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build solution
+        run: dotnet build --no-restore --configuration Release
+      
+      - name: Run tests
+        run: dotnet test --no-build --configuration Release --verbosity normal
+
+      - name: Publish NuGet package
+        run: |
+          dotnet pack DcsMissionParser.Net/DcsMissionParser.Net.csproj --no-build --configuration Release -o ./nupkg /p:PackageVersion=${{ steps.tag_version.outputs.new_tag }}
+          dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+
+
+
+     
+    
+  

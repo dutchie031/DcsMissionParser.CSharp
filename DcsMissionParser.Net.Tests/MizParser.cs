@@ -1,7 +1,7 @@
-﻿using DcsMissionParser.CSharp.Objects.Drawings;
-using Mono.Cecil.Rocks;
+﻿using DcsMissionParser.Net;
+using DcsMissionParser.Net.Objects.Drawing;
 
-namespace DcsMissionParser.CSharp.Tests
+namespace DcsMissionParser.Net.Tests
 {
     [TestClass]
     public sealed class MizParser

@@ -2,9 +2,10 @@
 using System.IO.Compression;
 using System.Reflection;
 using DcsMissionParser.CSharp.Annotations;
+using DcsMissionParser.Net;
 using Lua;
 
-namespace DcsMissionParser.CSharp.Parsers
+namespace DcsMissionParser.Net.Parsers
 {
 
     internal static class MizParser

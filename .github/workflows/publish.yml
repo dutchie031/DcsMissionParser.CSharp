@@ -25,6 +25,14 @@ jobs:
         with:
           dotnet-version: 9.0.x
 
+      - name: Prepare pre-release tag
+        run: |
+          if [ "${{ github.event.inputs.rc }}" = "true" ]; then
+            echo "PRE_TAG=rc" >> $GITHUB_ENV
+          else
+            echo "PRE_TAG=" >> $GITHUB_ENV
+          fi
+
       - name: Bump version
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.2
@@ -35,26 +43,25 @@ jobs:
           default_bump: ${{ github.event.inputs.patch_size }}
           default_prerelease_bump : ${{ github.event.inputs.patch_size }}
           tag_prefix: ""
-          append_to_pre_release_tag: ${{ github.event.inputs.rc && 'rc' || '' }}
-
+          append_to_pre_release_tag: ${{ env.PRE_TAG }}
           dry_run: true
 
-      - name: Display new version
-        run: echo "New version is ${{ steps.tag_version.outputs.new_tag }}"
+      # - name: Display new version
+      #   run: echo "New version is ${{ steps.tag_version.outputs.new_tag }}"
 
-      - name: Restore dependencies
-        run: dotnet restore
+      # - name: Restore dependencies
+      #   run: dotnet restore
 
-      - name: Build solution
-        run: dotnet build --no-restore --configuration Release
+      # - name: Build solution
+      #   run: dotnet build --no-restore --configuration Release
       
-      - name: Run tests
-        run: dotnet test --no-build --configuration Release --verbosity normal
+      # - name: Run tests
+      #   run: dotnet test --no-build --configuration Release --verbosity normal
 
-      - name: Publish NuGet package
-        run: |
-          dotnet pack DcsMissionParser.Net/DcsMissionParser.Net.csproj --no-build --configuration Release -o ./nupkg /p:PackageVersion=${{ steps.tag_version.outputs.new_tag }}
-          dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      # - name: Publish NuGet package
+      #   run: |
+      #     dotnet pack DcsMissionParser.Net/DcsMissionParser.Net.csproj --no-build --configuration Release -o ./nupkg /p:PackageVersion=${{ steps.tag_version.outputs.new_tag }}
+      #     dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
 
 
 

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DcsMissionParser.CSharp.Objects.Failures
+namespace DcsMissionParser.Net.Objects.Failures
 {
     public class Failure
     {

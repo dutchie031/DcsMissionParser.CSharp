@@ -1,7 +1,7 @@
 using System;
 using DcsMissionParser.CSharp.Annotations;
 
-namespace DcsMissionParser.CSharp.Objects.Drawings;
+namespace DcsMissionParser.Net.Objects.Drawing;
 
 public class Drawings
 {

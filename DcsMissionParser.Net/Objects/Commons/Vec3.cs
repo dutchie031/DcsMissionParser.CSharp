@@ -1,6 +1,6 @@
 ﻿using DcsMissionParser.CSharp.Annotations;
 
-namespace DcsMissionParser.CSharp.Objects.Commons
+namespace DcsMissionParser.Net.Objects.Commons
 {
     public class Vec3
     {

@@ -8,9 +8,9 @@ on:
         type: choice
         description: Size Of version change
         options:
-          - major
-          - minor
-          - patch
+          - '#major'
+          - '#minor'
+          - '#patch'
     
 
 jobs:

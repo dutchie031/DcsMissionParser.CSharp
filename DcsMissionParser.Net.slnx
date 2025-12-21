@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DcsMissionParser.Net.Tests/DcsMissionParser.Net.Tests.csproj" Id="811e2a4a-caee-4411-9911-3075ccbb767e" />
+  <Project Path="DcsMissionParser.Net/DcsMissionParser.Net.csproj" />
+</Solution>

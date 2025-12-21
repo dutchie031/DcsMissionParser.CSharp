@@ -10,7 +10,7 @@ namespace DcsMissionParser.CSharp.Objects.Drawings
         [LuaKey("name")]
         public string? Name { get; set; }
 
-        //[LuaKey("objects")]
+        [LuaKey("objects")]
         public List<DrawingObject> Objects { get; set; } = [];
 
     }

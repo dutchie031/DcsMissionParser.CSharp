@@ -28,8 +28,10 @@ jobs:
       - name: Prepare pre-release tag
         run: |
           if [ "${{ github.event.inputs.rc }}" = "true" ]; then
+            echo "Creating a release candidate pre-release tag"
             echo "PRE_TAG=rc" >> $GITHUB_ENV
           else
+            echo "Creating a standard release without pre-release tag"
             echo "PRE_TAG=" >> $GITHUB_ENV
           fi
 
@@ -46,8 +48,8 @@ jobs:
           append_to_pre_release_tag: ${{ env.PRE_TAG }}
           dry_run: true
 
-      # - name: Display new version
-      #   run: echo "New version is ${{ steps.tag_version.outputs.new_tag }}"
+      - name: Display new version
+        run: echo "New version is ${{ steps.tag_version.outputs.new_tag }}"
 
       # - name: Restore dependencies
       #   run: dotnet restore

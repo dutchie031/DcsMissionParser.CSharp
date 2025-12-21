@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="DcsMissionParser.CSharp.Tests/DcsMissionParser.CSharp.Tests.csproj" />
-  <Project Path="DcsMissionParser.CSharp/DcsMissionParser.CSharp.csproj" />
-</Solution>

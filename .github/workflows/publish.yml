@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
@@ -26,13 +28,14 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Bump version and push tag
+        id: tag_version
         uses: anothrNick/github-tag-action@v1 # Don't use @master or @v1 unless you're happy to test the latest version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG_PREFIX: ""  # No 'v' prefix
-          PRERELASE: ${{ github.event.inputs.rc }}
+          PRERELEASE: ${{ github.event.inputs.rc }}
           DRY_RUN: "true"
-          
+
       - name: Display new version
         run: echo "New version is ${{ steps.tag_version.outputs.new_tag }}"
 

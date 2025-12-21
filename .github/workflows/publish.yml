@@ -25,29 +25,14 @@ jobs:
         with:
           dotnet-version: 9.0.x
 
-      - name: Prepare pre-release tag
-        run: |
-          if [ "${{ github.event.inputs.rc }}" = "true" ]; then
-            echo "Creating a release candidate pre-release tag"
-            echo "PRE_TAG=rc" >> $GITHUB_ENV
-          else
-            echo "Creating a standard release without pre-release tag"
-            echo "PRE_TAG=" >> $GITHUB_ENV
-          fi
-
-      - name: Bump version
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v6.2
-        with:
-          release_branches: ''
-          pre_release_branches: '.*'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          default_bump: ${{ github.event.inputs.patch_size }}
-          default_prerelease_bump : ${{ github.event.inputs.patch_size }}
-          tag_prefix: ""
-          append_to_pre_release_tag: ${{ env.PRE_TAG }}
-          dry_run: true
-
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@v1 # Don't use @master or @v1 unless you're happy to test the latest version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG_PREFIX: ""  # No 'v' prefix
+          PRERELASE: ${{ github.event.inputs.rc }}
+          DRY_RUN: "true"
+          
       - name: Display new version
         run: echo "New version is ${{ steps.tag_version.outputs.new_tag }}"
 

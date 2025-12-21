@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using DcsMissionParser.CSharp.Annotations;
-using DcsMissionParser.CSharp.Objects.Commons;
+using DcsMissionParser.Net.Objects.Commons;
 using Lua;
 
-namespace DcsMissionParser.CSharp.Objects.Drawings
+namespace DcsMissionParser.Net.Objects.Drawing
 {
     public abstract class DrawingObject
     {

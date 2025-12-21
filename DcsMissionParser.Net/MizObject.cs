@@ -1,8 +1,7 @@
 ﻿using DcsMissionParser.CSharp.Annotations;
-using DcsMissionParser.CSharp.Objects.Drawings;
-using DcsMissionParser.CSharp.Objects.Failures;
+using DcsMissionParser.Net.Objects.Drawing;
 
-namespace DcsMissionParser.CSharp
+namespace DcsMissionParser.Net
 {
     public class MizObject
     {

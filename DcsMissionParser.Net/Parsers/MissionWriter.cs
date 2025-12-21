@@ -1,8 +1,9 @@
 ﻿using DcsMissionParser.CSharp.Annotations;
+using DcsMissionParser.Net;
 using System.Reflection;
 using System.Text;
 
-namespace DcsMissionParser.CSharp.Parsers
+namespace DcsMissionParser.Net.Parsers
 {
     internal static class MissionWriter
     {

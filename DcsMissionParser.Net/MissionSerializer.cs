@@ -1,12 +1,11 @@
-﻿using DcsMissionParser.CSharp.Objects.Drawings;
-using DcsMissionParser.CSharp.Parsers;
+﻿using DcsMissionParser.Net.Parsers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DcsMissionParser.CSharp
+namespace DcsMissionParser.Net
 {
     public class MissionSerializer
     {

@@ -15,7 +15,7 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-
+.DS_Store
 # Mono auto generated files
 mono_crash.*
 
@@ -29,6 +29,7 @@ mono_crash.*
 [Dd]ebugPublic/x64/
 [Rr]elease/x64/
 [Rr]eleases/x64/
+bin/*
 bin/x64/
 obj/x64/
 

@@ -10,6 +10,7 @@ public class ConvertConfig
         return mapName.ToLower() switch
         {
             "caucasus" => new Caucasus(),
+            "germanycw" => new GermanyCW(),
             _ => null
         };
     }
@@ -23,6 +24,18 @@ public class ConvertConfig
             ScaleFactor = 0.9996;
             FalseEasting = -99513.815;
             FalseNorthing = -4998114.749;
+        }
+    }
+
+    internal class GermanyCW : TransverseMercatorSettings
+    {
+        [SetsRequiredMembers]
+        public GermanyCW()
+        {
+            CentralMeridian = 21;
+            ScaleFactor = 0.9996;
+            FalseEasting = 35427.617;
+            FalseNorthing = -6061633.130;
         }
     }
 

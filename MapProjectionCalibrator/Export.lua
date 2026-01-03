@@ -8,6 +8,13 @@ local getBounds = function()
             bottomLeft  = { x = -561900, z = 0,    y = 0.0 },
             bottomRight = { x =  -561900, z = 900000,    y = 0.0 },
         }
+    elseif env.mission.theatre == "GermanyCW" then
+        return {
+            topLeft     = { x = 130000.0, z = -1000000.0, y = 0.0 },
+            topRight    = { x =  140000.0, z = -300000.0, y = 0.0 },
+            bottomLeft  = { x = -530000.0, z = -1000000.0,    y = 0.0 },
+            bottomRight = { x =  -530000.0, z = -300000.0,    y = 0.0 },
+        }
     end
 end
 

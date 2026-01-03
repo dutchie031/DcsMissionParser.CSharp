@@ -102,8 +102,9 @@ static TransverseMercatorSettings CalibrateTransverseMercator(IReadOnlyList<DcsP
             }
         }
     }
-
-    processRange(lonMin - 2.0, lonMax + 2.0, 0.1);
+    Console.WriteLine("LonMin: " + lonMin + " LonMax: " + lonMax);
+    processRange(-180, 180, 0.1);
+    processRange(best.CentralMeridian - 0.5, best.CentralMeridian + 0.5, 0.05);
     processRange(best.CentralMeridian - 0.2, best.CentralMeridian + 0.2, 0.01);
     processRange(best.CentralMeridian - 0.02, best.CentralMeridian + 0.02, 0.001);
 

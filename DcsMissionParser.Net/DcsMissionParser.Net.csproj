@@ -6,13 +6,18 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>DcsMissionParser.Net</PackageId>
-    <Version>0.0.3</Version>
+    <Version>0.0.4</Version>
     <Title>Dcs Mission Parser</Title>
 	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="LuaCSharp" Version="0.5.0" />
+    <PackageReference Include="ProjNET" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CoordMapping/" />
   </ItemGroup>
 
 </Project>

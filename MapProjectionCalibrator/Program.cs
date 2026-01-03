@@ -2,11 +2,7 @@
 using MapProjectionCalibrator;
 using ProjNet.CoordinateSystems;
 using ProjNet.CoordinateSystems.Transformations;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
-using System.Linq;
 using System.Text.Json;
 
 Console.WriteLine("MapProjectionCalibrator starting...");
@@ -63,44 +59,53 @@ static TransverseMercatorSettings CalibrateTransverseMercator(IReadOnlyList<DcsP
     var bestError = double.MaxValue;
 
     // Coarse grid search over central meridian and scale factor
-    for (var cm = lonMin - 2.0; cm <= lonMax + 2.0; cm += 0.5)
+    // Stage 1: Coarse search (current)
+
+    void processRange(double start, double end, double step)
     {
-        for (var k0 = 0.9990; k0 <= 1.0010; k0 += 0.0002)
+        for (var cm = start; cm <= end; cm += step) 
         {
-            // For each (cm, k0), solve best linear offsets (false easting/northing)
-            // by least squares between projected TM and DCS coordinates.
-            CreateProjection(cm, k0, out var toProj);
-
-            var eastProj = new double[points.Count];
-            var northProj = new double[points.Count];
-            var eastObs = new double[points.Count];   // DCS z
-            var northObs = new double[points.Count];  // DCS x
-
-            for (var i = 0; i < points.Count; i++)
+            for (var k0 = 0.9990; k0 <= 1.0010; k0 += 0.0001)
             {
-                var p = points[i];
-                eastObs[i] = p.Z; // DCS east
-                northObs[i] = p.X; // DCS north
-                var projected = toProj.MathTransform.Transform(new[] { p.Lon, p.Lat });
-                eastProj[i] = projected[0];
-                northProj[i] = projected[1];
-            }
+                // For each (cm, k0), solve best linear offsets (false easting/northing)
+                // by least squares between projected TM and DCS coordinates.
+                CreateProjection(cm, k0, out var toProj);
 
-            // Fit offsets: eastObs ≈ eastProj + E0, northObs ≈ northProj + N0
-            FitOffset(eastProj, eastObs, out var e0);
-            FitOffset(northProj, northObs, out var n0);
+                var eastProj = new double[points.Count];
+                var northProj = new double[points.Count];
+                var eastObs = new double[points.Count];   // DCS z
+                var northObs = new double[points.Count];  // DCS x
 
-            var error = ComputeRmsError(eastProj, northProj, eastObs, northObs, e0, n0);
-            if (error < bestError)
-            {
-                bestError = error;
-                best.CentralMeridian = cm;
-                best.ScaleFactor = k0;
-                best.FalseEasting = e0;
-                best.FalseNorthing = n0;
+                for (var i = 0; i < points.Count; i++)
+                {
+                    var p = points[i];
+                    eastObs[i] = p.Z; // DCS east
+                    northObs[i] = p.X; // DCS north
+                    var projected = toProj.MathTransform.Transform(new[] { p.Lon, p.Lat });
+                    eastProj[i] = projected[0];
+                    northProj[i] = projected[1];
+                }
+
+                // Fit offsets: eastObs ≈ eastProj + E0, northObs ≈ northProj + N0
+                FitOffset(eastProj, eastObs, out var e0);
+                FitOffset(northProj, northObs, out var n0);
+
+                var error = ComputeRmsError(eastProj, northProj, eastObs, northObs, e0, n0);
+                if (error < bestError)
+                {
+                    bestError = error;
+                    best.CentralMeridian = cm;
+                    best.ScaleFactor = k0;
+                    best.FalseEasting = e0;
+                    best.FalseNorthing = n0;
+                }
             }
         }
     }
+
+    processRange(lonMin - 2.0, lonMax + 2.0, 0.1);
+    processRange(best.CentralMeridian - 0.2, best.CentralMeridian + 0.2, 0.01);
+    processRange(best.CentralMeridian - 0.02, best.CentralMeridian + 0.02, 0.001);
 
     Console.WriteLine($"  RMS (calibration set): {bestError:F3} m");
     return best;

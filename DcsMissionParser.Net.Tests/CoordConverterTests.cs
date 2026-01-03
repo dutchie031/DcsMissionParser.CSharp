@@ -39,4 +39,36 @@ public class CoordConverterTests
         Assert.IsLessThan(0.00001, Math.Abs(44.117254759615 - ll.Lon));
     }
 
+    [TestMethod]
+    public void TestLLtoLO_GermanyCW()
+    {
+        LatLong ll = new()
+        {
+            Lat = 51.126640690379,
+            Lon = 6.2166775518959
+        };
+
+        var converter = CoordConverter.CreateForMap("GermanyCW");
+        var lo = converter.LLtoLO(ll);
+        Assert.IsNotNull(lo);
+        Assert.IsLessThan(1, Math.Abs(-293035 - lo.X));
+        Assert.IsLessThan(1, Math.Abs(-996539 - lo.Y));
+    }
+
+    [TestMethod]
+    public void TestLOtoLL_GermanyCW()
+    {
+        DcsCoord lo = new()
+        {
+            X = -153911,
+            Y = -756398
+        };
+
+        var converter = CoordConverter.CreateForMap("GermanyCW");
+        var ll = converter.LOtoLL(lo);
+        Assert.IsNotNull(ll);
+        Assert.IsLessThan(0.00001, Math.Abs(52.734293207779 - ll.Lat));
+        Assert.IsLessThan(0.00001, Math.Abs(9.2505764147083 - ll.Lon));
+    }
+
 }

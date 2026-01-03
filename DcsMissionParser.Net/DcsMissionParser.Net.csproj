@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>DcsMissionParser.Net</PackageId>
-    <Version>0.0.3</Version>
+    <Version>0.0.4</Version>
     <Title>Dcs Mission Parser</Title>
 	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>

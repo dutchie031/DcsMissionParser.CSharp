@@ -1,10 +1,17 @@
 -- 1) Define theatre bounds (per theatre)
-local bounds = {
-    topLeft     = { x = 0.0, z = 0.0, y = 0.0 },
-    topRight    = { x =  0.0, z = 900000, y = 0.0 },
-    bottomLeft  = { x = -561900, z = 0,    y = 0.0 },
-    bottomRight = { x =  -561900, z = 900000,    y = 0.0 },
-}
+
+local getBounds = function()
+    if env.mission.theatre == "Caucasus" then
+        return {
+            topLeft     = { x = 0.0, z = 0.0, y = 0.0 },
+            topRight    = { x =  0.0, z = 900000, y = 0.0 },
+            bottomLeft  = { x = -561900, z = 0,    y = 0.0 },
+            bottomRight = { x =  -561900, z = 900000,    y = 0.0 },
+        }
+    end
+end
+
+local bounds = getBounds()
 
 local theatre = env.mission.theatre or "UNKNOWN"
 

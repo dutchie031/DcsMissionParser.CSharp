@@ -1,9 +1,11 @@
 using System;
+using DcsMissionParser.Net.Annotations;
 
 namespace DcsMissionParser.Net.Objects.Commons;
 
-public class Skill(string value) : StringEnum(value)
+public class Skill: StringEnum
 {
+    private Skill(string value) : base(value) { }
     public readonly static Skill High = new("High");
     public readonly static Skill Good = new("Good");
     public readonly static Skill Average = new("Average");

@@ -61,7 +61,91 @@
                     "Heading": -2.2420264583992,
                     "Name": "Aerial-2-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -258899.27645934,
+                      "Y": 662329.44027585,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -275703.65442114,
+                      "Y": 641172.12103479,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -252622.9425218,
+                      "Y": 627708.37242685,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -271654.4067195,
+                      "Y": 680955.97970339,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -93,14 +177,98 @@
                       "Value": "AJS37"
                     },
                     "UnitId": 3,
-                    "Psi": 1.8952628082826,
+                    "Psi": 1.8952628082825,
                     "BoardNumber": "010",
                     "X": -261988.74902414,
                     "Y": 615954.54254941,
-                    "Heading": -1.8952628082826,
+                    "Heading": -1.8952628082825,
                     "Name": "Aerial-1-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -261988.74902414,
+                      "Y": 615954.54254941,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -281718.74928346,
+                      "Y": 557296.06476731,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -258638.03738412,
+                      "Y": 543832.31615937,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -277669.50158182,
+                      "Y": 597079.92343591,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -139,7 +307,91 @@
                     "Heading": -1.8952628082826,
                     "Name": "Aerial-3-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -270898.59874842,
+                      "Y": 622071.75280788,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -290628.59900775,
+                      "Y": 563413.27502578,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -267547.88710841,
+                      "Y": 549949.52641784,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -286579.35130611,
+                      "Y": 603197.13369438,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -171,14 +423,98 @@
                       "Value": "AJS37"
                     },
                     "UnitId": 5,
-                    "Psi": 1.9269753114341,
+                    "Psi": 1.9269753114342,
                     "BoardNumber": "013",
                     "X": -275685.98068983,
                     "Y": 624465.44377858,
-                    "Heading": -1.9269753114341,
+                    "Heading": -1.9269753114342,
                     "Name": "Aerial-4-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -275685.98068983,
+                      "Y": 624465.44377858,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -297410.72342475,
+                      "Y": 566072.9316599,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -274330.01152541,
+                      "Y": 552609.18305196,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -293361.47572311,
+                      "Y": 605856.7903285,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -210,14 +546,98 @@
                       "Value": "A-50"
                     },
                     "UnitId": 6,
-                    "Psi": 1.9269753114341,
+                    "Psi": 1.9269753114342,
                     "BoardNumber": "014",
                     "X": -280074.41413612,
                     "Y": 626061.23775905,
-                    "Heading": -1.9269753114341,
+                    "Heading": -1.9269753114342,
                     "Name": "Aerial-5-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 220.97222222222,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -280074.41413612,
+                      "Y": 626061.23775905,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 220.97222222222,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -301799.15687104,
+                      "Y": 567668.72564037,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 220.97222222222,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -278718.4449717,
+                      "Y": 554204.97703243,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 220.97222222222,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -297749.9091694,
+                      "Y": 607452.58430897,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -256,7 +676,91 @@
                     "Heading": -1.8925448391375,
                     "Name": "Aerial-6-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -285127.76174094,
+                      "Y": 628188.96306634,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -305123.72766368,
+                      "Y": 568200.65696719,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -282043.01576434,
+                      "Y": 554736.90835925,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -301074.47996204,
+                      "Y": 607984.51563579,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -288,14 +792,98 @@
                       "Value": "A-10A"
                     },
                     "UnitId": 8,
-                    "Psi": 1.9269753114341,
+                    "Psi": 1.926975311434,
                     "BoardNumber": "016",
                     "X": -289117.24669212,
                     "Y": 628454.92872975,
-                    "Heading": -1.9269753114341,
+                    "Heading": -1.926975311434,
                     "Name": "Aerial-7-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 123.33333333333,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -289117.24669212,
+                      "Y": 628454.92872975,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 123.33333333333,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -310841.98942703,
+                      "Y": 570062.41661107,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 123.33333333333,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -287761.27752769,
+                      "Y": 556598.66800313,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 123.33333333333,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -306792.74172539,
+                      "Y": 609846.27527967,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -327,14 +915,98 @@
                       "Value": "AJS37"
                     },
                     "UnitId": 9,
-                    "Psi": 1.9269753114341,
+                    "Psi": 1.926975311434,
                     "BoardNumber": "017",
                     "X": -292308.83465306,
                     "Y": 628986.86005658,
-                    "Heading": -1.9269753114341,
+                    "Heading": -1.926975311434,
                     "Name": "Aerial-8-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -292308.83465306,
+                      "Y": 628986.86005658,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -314033.57738797,
+                      "Y": 570594.34793789,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -290952.86548863,
+                      "Y": 557130.59932995,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -309984.32968633,
+                      "Y": 610378.20660649,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -373,7 +1045,91 @@
                     "Heading": -1.9269753114341,
                     "Name": "Aerial-9-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -296298.31960423,
+                      "Y": 629917.73987852,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -318023.06233915,
+                      "Y": 571525.22775983,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -294942.35043981,
+                      "Y": 558061.4791519,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -313973.81463751,
+                      "Y": 611309.08642844,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -412,7 +1168,91 @@
                     "Heading": -1.9062083146256,
                     "Name": "Aerial-10-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -300287.80455541,
+                      "Y": 630981.60253217,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -320549.73614156,
+                      "Y": 572855.05607689,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -297469.02424222,
+                      "Y": 559391.30746895,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -316500.48843992,
+                      "Y": 612638.91474549,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -444,14 +1284,98 @@
                       "Value": "AJS37"
                     },
                     "UnitId": 12,
-                    "Psi": 1.908035343104,
+                    "Psi": 1.9080353431041,
                     "BoardNumber": "020",
                     "X": -303346.40968464,
                     "Y": 632311.43084922,
-                    "Heading": -1.908035343104,
+                    "Heading": -1.9080353431041,
                     "Name": "Aerial-11-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -303346.40968464,
+                      "Y": 632311.43084922,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -324007.28976591,
+                      "Y": 573386.98740372,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -300926.57786657,
+                      "Y": 559923.23879578,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -319958.04206427,
+                      "Y": 613170.84607232,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -490,7 +1414,91 @@
                     "Heading": -1.9286208589378,
                     "Name": "Aerial-12-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -306253.41438573,
+                      "Y": 633838.07375721,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -327883.73931013,
+                      "Y": 575990.79124852,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -304803.02741079,
+                      "Y": 562527.04264058,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -323834.49160849,
+                      "Y": 615774.64991712,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -529,7 +1537,91 @@
                     "Heading": -1.9136041669335,
                     "Name": "Aerial-13-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -309484.89719618,
+                      "Y": 634915.23469402,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -330361.20946481,
+                      "Y": 576421.65562324,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -307280.49756547,
+                      "Y": 562957.9070153,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -326311.96176317,
+                      "Y": 616205.51429184,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -568,7 +1660,91 @@
                     "Heading": -1.9136041669335,
                     "Name": "Aerial-14-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -312608.66391295,
+                      "Y": 635022.9507877,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -333484.97618158,
+                      "Y": 576529.37171692,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -310404.26428224,
+                      "Y": 563065.62310898,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -329435.72847994,
+                      "Y": 616313.23038552,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -600,14 +1776,98 @@
                       "Value": "A6E"
                     },
                     "UnitId": 16,
-                    "Psi": 1.9202743293955,
+                    "Psi": 1.9202743293956,
                     "BoardNumber": "024",
                     "X": -308946.31672777,
                     "Y": 648272.03031055,
-                    "Heading": -1.9202743293955,
+                    "Heading": -1.9202743293956,
                     "Name": "Aerial-15-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -308946.31672777,
+                      "Y": 648272.03031055,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -330145.77727745,
+                      "Y": 590101.59952082,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -307065.06537811,
+                      "Y": 576637.85091288,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -326096.52957581,
+                      "Y": 629885.45818942,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -646,7 +1906,91 @@
                     "Heading": -1.9136041669335,
                     "Name": "Aerial-16-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -314008.97313081,
+                      "Y": 644825.11531274,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -334885.28539944,
+                      "Y": 586331.53624196,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -311804.5735001,
+                      "Y": 572867.78763402,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 210.69444444444,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -330836.0376978,
+                      "Y": 626115.39491056,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -683,7 +2027,91 @@
                     "Heading": -1.9136041669335,
                     "Name": "Aerial-17-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 231.25,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -316594.15937917,
+                      "Y": 644717.39921906,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 231.25,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -337470.4716478,
+                      "Y": 586223.82014828,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 231.25,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -314389.75974846,
+                      "Y": 572760.07154034,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 231.25,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -333421.22394616,
+                      "Y": 626007.67881688,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               },
               {
                 "IsDynamicSpawnTemplate": false,
@@ -720,7 +2148,214 @@
                     "Heading": -1.9136041669335,
                     "Name": "Aerial-18-1"
                   }
-                ]
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 231.25,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -320256.50656435,
+                      "Y": 645040.5475001,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 231.25,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -341132.81883298,
+                      "Y": 586546.96842932,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 231.25,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -318052.10693364,
+                      "Y": 573083.21982138,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 231.25,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -337083.57113134,
+                      "Y": 626330.82709792,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Ground Attack"
+                },
+                "Uncontrolled": false,
+                "GroupId": 21,
+                "IsHidden": false,
+                "X": -231238.23021732,
+                "Y": 647730.02985618,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "Excellent"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 21,
+                    "Psi": 2.2420264583992,
+                    "BoardNumber": "028",
+                    "X": -231238.23021732,
+                    "Y": 647730.02985618,
+                    "Heading": -2.2420264583992,
+                    "Name": "Aerial-20-1"
+                  }
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -231238.23021732,
+                      "Y": 647730.02985618,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 175.25752794188,
+                      "IsETALocked": false,
+                      "X": -248042.60817912,
+                      "Y": 626572.71061512,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 348.58049945441,
+                      "IsETALocked": false,
+                      "X": -224961.89627978,
+                      "Y": 613108.96200718,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 715.36847265906,
+                      "IsETALocked": false,
+                      "X": -243993.36047748,
+                      "Y": 666356.56928372,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
               }
             ]
           }
@@ -745,7 +2380,137 @@
         }
       ],
       "Name": "blue",
-      "Countries": []
+      "Countries": [
+        {
+          "Id": 2,
+          "Name": "USA",
+          "Planes": {
+            "Groups": [
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "CAP"
+                },
+                "Uncontrolled": false,
+                "GroupId": 20,
+                "IsHidden": false,
+                "X": -236616.04344442,
+                "Y": 486222.15519731,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 20,
+                    "Psi": 1.0939044591294,
+                    "BoardNumber": "028",
+                    "X": -236616.04344442,
+                    "Y": 486222.15519731,
+                    "Heading": -1.0939044591294,
+                    "Name": "Aerial-19-1"
+                  }
+                ],
+                "Route": {
+                  "Points": [
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 0,
+                      "IsETALocked": true,
+                      "X": -236616.04344442,
+                      "Y": 486222.15519731,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Turning Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 151.98949449728,
+                      "IsETALocked": false,
+                      "X": -225860.41699023,
+                      "Y": 465404.81367307,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 2000,
+                      "Action": {
+                        "Value": "Fly Over Point"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 154.16666666667,
+                      "Type": {
+                        "Value": "Turning Point"
+                      },
+                      "ETA": 353.46162426468,
+                      "IsETALocked": false,
+                      "X": -225166.50560609,
+                      "Y": 434352.27923275,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    },
+                    {
+                      "Altitude": 30,
+                      "Action": {
+                        "Value": "Landing"
+                      },
+                      "AltitudeType": {
+                        "Value": "BARO"
+                      },
+                      "Speed": 138.88888888889,
+                      "Type": null,
+                      "ETA": 785.56706462272,
+                      "IsETALocked": false,
+                      "X": -164496.46875,
+                      "Y": 462218.921875,
+                      "IsSpeedLocked": true,
+                      "FormationTemplate": "",
+                      "Tasks": []
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }

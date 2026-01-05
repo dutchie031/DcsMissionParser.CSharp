@@ -59,8 +59,13 @@ public class WrappedAction : PointTask
 
 public class WrappedActionParams
 {
-    
+
+    public class Action 
+    {
+        
+    }
 }
+
 
 public class PointTaskID : StringEnum
 {

@@ -1,121 +1,751 @@
 {
-  "Drawings": {
-    "Layers": [
-      {
-        "Visible": true,
-        "Name": "Red",
-        "Objects": []
+  "Drawings": null,
+  "Theatre": "Caucasus",
+  "Coalitions": {
+    "Neutrals": {
+      "BullsEye": {
+        "X": 0,
+        "Y": 0
       },
-      {
-        "Visible": true,
-        "Name": "Blue",
-        "Objects": []
+      "NavPoints": [],
+      "Name": "neutrals",
+      "Countries": []
+    },
+    "Red": {
+      "BullsEye": {
+        "X": 11557,
+        "Y": 371700
       },
-      {
-        "Visible": true,
-        "Name": "Neutral",
-        "Objects": []
-      },
-      {
-        "Visible": true,
-        "Name": "Common",
-        "Objects": []
-      },
-      {
-        "Visible": true,
-        "Name": "Author",
-        "Objects": [
-          {
-            "PrimitiveType": 1,
-            "Name": "Line-1",
-            "Visible": true,
-            "LayerName": "Author",
-            "MapX": -320230.81369873,
-            "MapY": 542804.16816676,
-            "ColorString": "0xff0000ff",
-            "Style": "solid",
-            "Thickness": 8
-          },
-          {
-            "PrimitiveType": 1,
-            "Name": "Line-2",
-            "Visible": true,
-            "LayerName": "Author",
-            "MapX": -306340.0715928,
-            "MapY": 585552.43788713,
-            "ColorString": "0xff0000ff",
-            "Style": "solid",
-            "Thickness": 8
-          },
-          {
-            "PrimitiveType": 1,
-            "Name": "Line-3",
-            "Visible": true,
-            "LayerName": "Author",
-            "MapX": -301057.67670744,
-            "MapY": 587997.9910748,
-            "ColorString": "0xff0000ff",
-            "Style": "solid",
-            "Thickness": 8
-          },
-          {
-            "PrimitiveType": 2,
-            "Name": "Polygon-1",
-            "Visible": true,
-            "LayerName": "Author",
-            "MapX": -307269.38180411,
-            "MapY": 614507.78762908,
-            "ColorString": "0xff0000ff",
-            "Style": "solid",
-            "Thickness": 8
-          },
-          {
-            "PrimitiveType": 2,
-            "Name": "Polygon-2",
-            "Visible": true,
-            "LayerName": "Author",
-            "MapX": -306291.16052904,
-            "MapY": 633680.92462037,
-            "ColorString": "0xff0000ff",
-            "Style": "solid",
-            "Thickness": 8
-          },
-          {
-            "PrimitiveType": 2,
-            "Name": "Polygon-3",
-            "Visible": true,
-            "LayerName": "Author",
-            "MapX": -306780.27116658,
-            "MapY": 651655.7405497,
-            "ColorString": "0xff0000ff",
-            "Style": "solid",
-            "Thickness": 8
-          },
-          {
-            "PrimitiveType": 2,
-            "Name": "Polygon-7",
-            "Visible": true,
-            "LayerName": "Author",
-            "MapX": -300275.09968739,
-            "MapY": 666989.35903635,
-            "ColorString": "0xff0000ff",
-            "Style": "solid",
-            "Thickness": 8
-          },
-          {
-            "PrimitiveType": 2,
-            "Name": "Polygon-9",
-            "Visible": true,
-            "LayerName": "Author",
-            "MapX": -294312.15526561,
-            "MapY": 706592.10133961,
-            "ColorString": "0xff0000ff",
-            "Style": "solid",
-            "Thickness": 8
+      "NavPoints": [],
+      "Name": "red",
+      "Countries": [
+        {
+          "Id": 0,
+          "Name": "Russia",
+          "Planes": {
+            "Groups": [
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Ground Attack"
+                },
+                "Uncontrolled": false,
+                "GroupId": 2,
+                "IsHidden": false,
+                "X": -258899.27645934,
+                "Y": 662329.44027585,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 2,
+                    "Psi": 2.2420264583992,
+                    "BoardNumber": "011",
+                    "X": -258899.27645934,
+                    "Y": 662329.44027585,
+                    "Heading": -2.2420264583992,
+                    "Name": "Aerial-2-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Nothing"
+                },
+                "Uncontrolled": false,
+                "GroupId": 3,
+                "IsHidden": false,
+                "X": -261988.74902414,
+                "Y": 615954.54254941,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 3,
+                    "Psi": 1.8952628082826,
+                    "BoardNumber": "010",
+                    "X": -261988.74902414,
+                    "Y": 615954.54254941,
+                    "Heading": -1.8952628082826,
+                    "Name": "Aerial-1-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "AFAC"
+                },
+                "Uncontrolled": false,
+                "GroupId": 4,
+                "IsHidden": false,
+                "X": -270898.59874842,
+                "Y": 622071.75280788,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 4,
+                    "Psi": 1.8952628082826,
+                    "BoardNumber": "012",
+                    "X": -270898.59874842,
+                    "Y": 622071.75280788,
+                    "Heading": -1.8952628082826,
+                    "Name": "Aerial-3-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Antiship Strike"
+                },
+                "Uncontrolled": false,
+                "GroupId": 5,
+                "IsHidden": false,
+                "X": -275685.98068983,
+                "Y": 624465.44377858,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 5,
+                    "Psi": 1.9269753114341,
+                    "BoardNumber": "013",
+                    "X": -275685.98068983,
+                    "Y": 624465.44377858,
+                    "Heading": -1.9269753114341,
+                    "Name": "Aerial-4-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "AWACS"
+                },
+                "Uncontrolled": false,
+                "GroupId": 6,
+                "IsHidden": false,
+                "X": -280074.41413612,
+                "Y": 626061.23775905,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 251,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "RF Air Force",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 220.97222222222,
+                    "Type": {
+                      "Value": "A-50"
+                    },
+                    "UnitId": 6,
+                    "Psi": 1.9269753114341,
+                    "BoardNumber": "014",
+                    "X": -280074.41413612,
+                    "Y": 626061.23775905,
+                    "Heading": -1.9269753114341,
+                    "Name": "Aerial-5-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "CAP"
+                },
+                "Uncontrolled": false,
+                "GroupId": 7,
+                "IsHidden": false,
+                "X": -285127.76174094,
+                "Y": 628188.96306634,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 7,
+                    "Psi": 1.8925448391375,
+                    "BoardNumber": "015",
+                    "X": -285127.76174094,
+                    "Y": 628188.96306634,
+                    "Heading": -1.8925448391375,
+                    "Name": "Aerial-6-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "CAS"
+                },
+                "Uncontrolled": false,
+                "GroupId": 8,
+                "IsHidden": false,
+                "X": -289117.24669212,
+                "Y": 628454.92872975,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 124,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "fictional russian air force 1",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 123.33333333333,
+                    "Type": {
+                      "Value": "A-10A"
+                    },
+                    "UnitId": 8,
+                    "Psi": 1.9269753114341,
+                    "BoardNumber": "016",
+                    "X": -289117.24669212,
+                    "Y": 628454.92872975,
+                    "Heading": -1.9269753114341,
+                    "Name": "Aerial-7-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Escort"
+                },
+                "Uncontrolled": false,
+                "GroupId": 9,
+                "IsHidden": false,
+                "X": -292308.83465306,
+                "Y": 628986.86005658,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 9,
+                    "Psi": 1.9269753114341,
+                    "BoardNumber": "017",
+                    "X": -292308.83465306,
+                    "Y": 628986.86005658,
+                    "Heading": -1.9269753114341,
+                    "Name": "Aerial-8-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Fighter Sweep"
+                },
+                "Uncontrolled": false,
+                "GroupId": 10,
+                "IsHidden": false,
+                "X": -296298.31960423,
+                "Y": 629917.73987852,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 10,
+                    "Psi": 1.9269753114341,
+                    "BoardNumber": "018",
+                    "X": -296298.31960423,
+                    "Y": 629917.73987852,
+                    "Heading": -1.9269753114341,
+                    "Name": "Aerial-9-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Ground Attack"
+                },
+                "Uncontrolled": false,
+                "GroupId": 11,
+                "IsHidden": false,
+                "X": -300287.80455541,
+                "Y": 630981.60253217,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 11,
+                    "Psi": 1.9062083146256,
+                    "BoardNumber": "019",
+                    "X": -300287.80455541,
+                    "Y": 630981.60253217,
+                    "Heading": -1.9062083146256,
+                    "Name": "Aerial-10-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Intercept"
+                },
+                "Uncontrolled": false,
+                "GroupId": 12,
+                "IsHidden": false,
+                "X": -303346.40968464,
+                "Y": 632311.43084922,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 12,
+                    "Psi": 1.908035343104,
+                    "BoardNumber": "020",
+                    "X": -303346.40968464,
+                    "Y": 632311.43084922,
+                    "Heading": -1.908035343104,
+                    "Name": "Aerial-11-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Pinpoint Strike"
+                },
+                "Uncontrolled": false,
+                "GroupId": 13,
+                "IsHidden": false,
+                "X": -306253.41438573,
+                "Y": 633838.07375721,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 13,
+                    "Psi": 1.9286208589378,
+                    "BoardNumber": "021",
+                    "X": -306253.41438573,
+                    "Y": 633838.07375721,
+                    "Heading": -1.9286208589378,
+                    "Name": "Aerial-12-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Reconnaissance"
+                },
+                "Uncontrolled": false,
+                "GroupId": 14,
+                "IsHidden": false,
+                "X": -309484.89719618,
+                "Y": 634915.23469402,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "37",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 154.16666666667,
+                    "Type": {
+                      "Value": "AJS37"
+                    },
+                    "UnitId": 14,
+                    "Psi": 1.9136041669335,
+                    "BoardNumber": "022",
+                    "X": -309484.89719618,
+                    "Y": 634915.23469402,
+                    "Heading": -1.9136041669335,
+                    "Name": "Aerial-13-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Refueling"
+                },
+                "Uncontrolled": false,
+                "GroupId": 15,
+                "IsHidden": false,
+                "X": -312608.66391295,
+                "Y": 635022.9507877,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "va165-501-1989",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 210.69444444444,
+                    "Type": {
+                      "Value": "A6E"
+                    },
+                    "UnitId": 15,
+                    "Psi": 1.9136041669335,
+                    "BoardNumber": "023",
+                    "X": -312608.66391295,
+                    "Y": 635022.9507877,
+                    "Heading": -1.9136041669335,
+                    "Name": "Aerial-14-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Runway Attack"
+                },
+                "Uncontrolled": false,
+                "GroupId": 16,
+                "IsHidden": false,
+                "X": -308946.31672777,
+                "Y": 648272.03031055,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "va165-501-1989",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 210.69444444444,
+                    "Type": {
+                      "Value": "A6E"
+                    },
+                    "UnitId": 16,
+                    "Psi": 1.9202743293955,
+                    "BoardNumber": "024",
+                    "X": -308946.31672777,
+                    "Y": 648272.03031055,
+                    "Heading": -1.9202743293955,
+                    "Name": "Aerial-15-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "SEAD"
+                },
+                "Uncontrolled": false,
+                "GroupId": 17,
+                "IsHidden": false,
+                "X": -314008.97313081,
+                "Y": 644825.11531274,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 305,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "va165-501-1989",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 210.69444444444,
+                    "Type": {
+                      "Value": "A6E"
+                    },
+                    "UnitId": 17,
+                    "Psi": 1.9136041669335,
+                    "BoardNumber": "025",
+                    "X": -314008.97313081,
+                    "Y": 644825.11531274,
+                    "Heading": -1.9136041669335,
+                    "Name": "Aerial-16-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Transport"
+                },
+                "Uncontrolled": false,
+                "GroupId": 18,
+                "IsHidden": false,
+                "X": -316594.15937917,
+                "Y": 644717.39921906,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 127.5,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "air france",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 231.25,
+                    "Type": null,
+                    "UnitId": 18,
+                    "Psi": 1.9136041669335,
+                    "BoardNumber": "026",
+                    "X": -316594.15937917,
+                    "Y": 644717.39921906,
+                    "Heading": -1.9136041669335,
+                    "Name": "Aerial-17-1"
+                  }
+                ]
+              },
+              {
+                "IsDynamicSpawnTemplate": false,
+                "Modulation": 0,
+                "RadioSet": false,
+                "Tasking": {
+                  "Value": "Transport"
+                },
+                "Uncontrolled": false,
+                "GroupId": 19,
+                "IsHidden": false,
+                "X": -320256.50656435,
+                "Y": 645040.5475001,
+                "Communication": true,
+                "StartTime": 0,
+                "Frequency": 127.5,
+                "Units": [
+                  {
+                    "Alt": 2000,
+                    "AltType": {
+                      "Value": "BARO"
+                    },
+                    "LiveryId": "air france",
+                    "Skill": {
+                      "Value": "High"
+                    },
+                    "Speed": 231.25,
+                    "Type": null,
+                    "UnitId": 19,
+                    "Psi": 1.9136041669335,
+                    "BoardNumber": "027",
+                    "X": -320256.50656435,
+                    "Y": 645040.5475001,
+                    "Heading": -1.9136041669335,
+                    "Name": "Aerial-18-1"
+                  }
+                ]
+              }
+            ]
           }
-        ]
-      }
-    ]
-  },
-  "Theatre": "Caucasus"
+        }
+      ]
+    },
+    "Blue": {
+      "BullsEye": {
+        "X": -291014,
+        "Y": 617414
+      },
+      "NavPoints": [
+        {
+          "Type": "Default",
+          "Comment": "",
+          "CallSignString": null,
+          "Id": 165,
+          "Properties": {
+            "VNAV": 0,
+            "Scale": 0
+          }
+        }
+      ],
+      "Name": "blue",
+      "Countries": []
+    }
+  }
 }

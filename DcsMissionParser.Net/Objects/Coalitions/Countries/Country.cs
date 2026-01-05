@@ -13,10 +13,13 @@ namespace DcsMissionParser.Net.Objects.Coalitions.Countries
         [LuaKey("id")]
         public int Id { get; set; }
 
+        [LuaKey("name")]
+        public string Name { get; set; } = string.Empty;
+
         [LuaKey("plane")]
         public Planes Planes { get; set; } = new ();
 
 
-        
+
     }
 }

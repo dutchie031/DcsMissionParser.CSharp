@@ -9,7 +9,8 @@ namespace DcsMissionParser.Net.Objects.Coalitions.Countries.Groups
 {
     public class Planes
     {
-        [LuaKey("plane")]
+        [LuaKey("group")]
         public List<PlaneGroup> Groups { get; set; } = [];
+
     }
 }

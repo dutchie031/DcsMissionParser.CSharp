@@ -11,7 +11,7 @@ namespace DcsMissionParser.Net.Tests
         static string mission_output = "../../../../.ref/TestDrawings_MissionOuput";
 
 
-        static ParseResult<MizObject> result;
+        static ParseResult<MizObject>? result;
 
         [AssemblyInitialize]
         public static async Task AssemblyInit(TestContext context)
@@ -31,7 +31,7 @@ namespace DcsMissionParser.Net.Tests
         [TestMethod]
         public async Task Parsed_FreePolygon() 
         {
-            var drawingObject = result.Result?.Drawings?.Layers
+            var drawingObject = result?.Result?.Drawings?.Layers
                 .FirstOrDefault(x => x.Name == "Author")?
                 .Objects
                 .FirstOrDefault(x => x.PrimitiveType == PrimitiveType.Polygon && ((Polygon)x).PolygonMode == PolygonMode.Free);
@@ -40,9 +40,18 @@ namespace DcsMissionParser.Net.Tests
         }
 
         [TestMethod]
+        public async Task Parsed_Success()
+        {
+            if (result?.Success != true) 
+            {
+                Assert.Fail(result?.FailureReason ?? "Unknown parsing failure");
+            }
+        }
+
+        [TestMethod]
         public async Task Serialize() 
         {
-            MizObject mizObject = result.Result!;
+            MizObject mizObject = result?.Result!;
 
             var parseResult = await MissionSerializer.Serialize(mizObject);
             if (!parseResult.Success) 

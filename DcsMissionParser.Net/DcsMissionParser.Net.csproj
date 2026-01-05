@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <Folder Include="CoordMapping/" />
+    <Folder Include="Objects/Coalitions/Routes/Plane/Tasks/" />
+    <Folder Include="Objects/Commons/Types/" />
   </ItemGroup>
 
 </Project>

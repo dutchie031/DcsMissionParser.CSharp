@@ -3,6 +3,7 @@ using System.IO.Compression;
 using System.Reflection;
 using DcsMissionParser.CSharp.Annotations;
 using DcsMissionParser.Net;
+using DcsMissionParser.Net.Objects.Commons;
 using Lua;
 
 namespace DcsMissionParser.Net.Parsers
@@ -18,10 +19,10 @@ namespace DcsMissionParser.Net.Parsers
             }
 
             LuaTable missionTable = await ParseMissionFile(missionBytes);
-            MizObject? mizObject = (MizObject?) ParseTable(missionTable, typeof(MizObject));
-            if (mizObject != null)
+            var parseResult = ParseTable(missionTable, typeof(MizObject));
+            if (parseResult.Success && parseResult.Result is MizObject mizObject)
                 return ParseResult<MizObject>.Ok(mizObject);
-            return ParseResult<MizObject>.Fail("Could not parse mission");
+            return ParseResult<MizObject>.Fail(parseResult.FailureReason);
         }
 
         private static bool IsList(this Type target)
@@ -29,156 +30,223 @@ namespace DcsMissionParser.Net.Parsers
             return target.IsGenericType && target.GetGenericTypeDefinition() == typeof(List<>);
         }
 
-        private static object? ParseTable(LuaTable table, Type target) 
+        private static bool IsDict(this Type target)
         {
-            if (target.IsList())
-            {
-                IList? listInstance = (IList?)Activator.CreateInstance(target);
-                if (listInstance == null)
-                    return null;
+            return target.IsGenericType && target.GetGenericTypeDefinition() == typeof(Dictionary<,>);
+        }
 
-                Type child = target.GetGenericArguments().Single();
-                foreach (var item in table)
+        private static ParseResult<object> ParseTable(LuaTable table, Type target) 
+        {
+            return target switch
+            {
+                _ when target.IsList() => ParseList(table, target),
+                _ when target.IsDict() => ParseDictionary(table, target),
+                _ when target.IsAbstract => ParseAbstractClass(table, target),
+                _ when target.IsClass => ParseClass(table, target),
+                _ => ParseResult<object>.Fail($"Unsupported type: {target.Name}")
+            };
+        }
+
+        private static ParseResult<object> ParseList(LuaTable table, Type listType) 
+        {
+            IList? listInstance = (IList?)Activator.CreateInstance(listType);
+            if (listInstance == null)
+                return ParseResult<object>.Fail("Failed to create list instance");
+
+            Type child = listType.GetGenericArguments().Single();
+            foreach (var item in table)
+            {
+                if (item.Value.TryRead(out LuaTable childItem))
                 {
-                    if (item.Value.TryRead(out LuaTable childItem))
-                    {
-                        object? parsed = ParseTable(childItem, child);
-                        if (parsed != null)
-                            listInstance.Add(parsed);
-                    }
-                    //TODO: else it's a table of items, which isn't needed right now. 
+                    var parseResult = ParseTable(childItem, child);
+                    if (parseResult.Success && parseResult.Result != null)
+                        listInstance.Add(parseResult.Result);
                 }
-                return listInstance;
+                //TODO: else it's a table of items, which isn't needed right now. 
             }
-            else if (target.IsGenericType && target.GetGenericTypeDefinition() == typeof(Dictionary<,>)) 
-            {
-                Type keyType = target.GetGenericArguments()[0];
-                Type valueType = target.GetGenericArguments()[1];
-                
-                Type newDictType = typeof(Dictionary<,>).MakeGenericType(keyType, valueType);
-                IDictionary? dictInstance = (IDictionary?) Activator.CreateInstance(newDictType);
-                if (dictInstance == null)
-                    return null;
+            return ParseResult<object>.Ok(listInstance);
+        }
 
-                foreach (var item in table) 
+        private static ParseResult<object> ParseDictionary(LuaTable table, Type dictType) 
+        {
+            Type keyType = dictType.GetGenericArguments()[0];
+            Type valueType = dictType.GetGenericArguments()[1];
+            
+            Type newDictType = typeof(Dictionary<,>).MakeGenericType(keyType, valueType);
+            IDictionary? dictInstance = (IDictionary?) Activator.CreateInstance(newDictType);
+            if (dictInstance == null)
+                return ParseResult<object>.Fail("Failed to create dictionary instance");
+
+            foreach (var item in table) 
+            {
+                if (!item.Key.TryRead(out object keyObj))
+                    continue;
+
+                object? valueObj = null;
+                if(typeof(StringEnum).IsAssignableFrom(valueType))
                 {
-                    if (!item.Key.TryRead(out object keyObj))
+                    if (!item.Value.TryRead(out string valueStr))
+                        continue;
+                    
+                    // Use reflection to call StringEnum.FromValue<T>(string)
+                    var fromValueMethod = typeof(StringEnum).GetMethod(nameof(StringEnum.FromValue))!.MakeGenericMethod(valueType);
+                    valueObj = fromValueMethod.Invoke(null, new object[] { valueStr });
+                }
+                else if (valueType.IsClass)
+                {
+                    if (!item.Value.TryRead(out LuaTable valueTable))
                         continue;
 
-                    object? valueObj = null;
-                    if (valueType.IsClass)
-                    {
-                        if (!item.Value.TryRead(out LuaTable valueTable))
-                            continue;
-
-                        valueObj = ParseTable(valueTable, valueType);
-                    }
-                    else if (valueType == typeof(string))
-                    {
-                        if (!item.Value.TryRead(out string valueStr))
-                            continue;
-
-                        valueObj = valueStr;
-                    }
-                    else if (valueType == typeof(int))
-                    {
-                        if (!item.Value.TryRead(out int valueInt))
-                            continue;
-                        valueObj = valueInt;
-                    }
-                    else if (valueType == typeof(double))
-                    {
-                        if (!item.Value.TryRead(out double valueDouble))
-                            continue;
-                        valueObj = valueDouble;
-                    }
-                    else if (valueType == typeof(bool))
-                    {
-                        if (!item.Value.TryRead(out bool valueBool))
-                            continue;
-                        valueObj = valueBool;
-                    } else 
-                    {
-                        valueObj = null;
-                    }
-
-                    dictInstance.Add(keyObj, valueObj);
+                    var valueResult = ParseTable(valueTable, valueType);
+                    if (valueResult.Success)
+                        valueObj = valueResult.Result;
                 }
-                return dictInstance;
-            }
-            else if (target.IsClass && target.IsAbstract)
-            {
-                IEnumerable<Type> subClasses = Assembly.GetExecutingAssembly()
-                .GetTypes()
-                .Where(t => t.BaseType == target);
-
-                foreach (var subclass in subClasses)
+                else if (valueType == typeof(string))
                 {
-                    if (subclass.GetCustomAttributes(typeof(LuaClassByEnumAttribute<>)).FirstOrDefault() is ILuaClassByEnumAttribute enumAttribute)
-                    {
-                        string key = enumAttribute.KeySelection;
-                        if (table[key].TryRead(out string s))
-                        {
-                            object val = Enum.Parse(enumAttribute.EnumType, s, true);
-                            if (val.Equals(enumAttribute.Value))
-                            {
-                                return ParseTable(table, subclass);
-                            }
-                        }
-                    }
-                }
-            }
-            else if (target.IsClass)
-            {
-                object? instance = Activator.CreateInstance(target);
-                if (instance == null)
-                    return null;
-
-                foreach (var property in target.GetProperties(BindingFlags.Instance | BindingFlags.Public))
-                {
-                    if (property.GetCustomAttributes(typeof(LuaKeyAttribute), false).FirstOrDefault() is not LuaKeyAttribute attribute)
+                    if (!item.Value.TryRead(out string valueStr))
                         continue;
 
-                    string luaKey = attribute.Name;
-                    Type propertyType = property.PropertyType;
-                    if (propertyType.IsPrimitive)
+                    valueObj = valueStr;
+                }
+                else if (valueType == typeof(int))
+                {
+                    if (!item.Value.TryRead(out int valueInt))
+                        continue;
+                    valueObj = valueInt;
+                }
+                else if (valueType == typeof(double))
+                {
+                    if (!item.Value.TryRead(out double valueDouble))
+                        continue;
+                    valueObj = valueDouble;
+                }
+                else if (valueType == typeof(bool))
+                {
+                    if (!item.Value.TryRead(out bool valueBool))
+                        continue;
+                    valueObj = valueBool;
+                } else 
+                {
+                    valueObj = null;
+                }
+
+                dictInstance.Add(keyObj, valueObj);
+            }
+            return ParseResult<object>.Ok(dictInstance);
+        }
+
+        private static ParseResult<object> ParseClass(LuaTable table, Type classType) 
+        {
+            object? instance = Activator.CreateInstance(classType);
+            if (instance == null)
+                return ParseResult<object>.Fail("Failed to create class instance");
+
+            foreach (var property in classType.GetProperties(BindingFlags.Instance | BindingFlags.Public))
+            {
+                if (property.GetCustomAttributes(typeof(LuaKeyAttribute), false).FirstOrDefault() is not LuaKeyAttribute attribute)
+                    continue;
+
+                string luaKey = attribute.Name;
+                Type propertyType = property.PropertyType;
+                if (propertyType.IsPrimitive)
+                {
+                    if (propertyType == typeof(int))
                     {
-                        if (propertyType == typeof(int))
-                        {
-                            if (table[luaKey].TryRead(out int s))
-                                property.SetValue(instance, s);
-                        }
-                        else if (propertyType == typeof(double))
-                        {
-                            if (table[luaKey].TryRead(out double s))
-                                property.SetValue(instance, s);
-                        }
-                        else if (propertyType == typeof(bool))
-                        {
-                            if (table[luaKey].TryRead(out bool s))
-                                property.SetValue(instance, s);
-                        }
-                    }
-                    if (propertyType == typeof(string))
-                    {
-                        if (table[luaKey].TryRead(out string s))
+                        if (table[luaKey].TryRead(out int s))
                             property.SetValue(instance, s);
                     }
-                    else if (propertyType.IsClass || propertyType.IsList())
+                    else if (propertyType == typeof(double))
                     {
-                        if (table[luaKey].TryRead(out LuaTable childTable))
-                            property.SetValue(instance, ParseTable(childTable, propertyType));
+                        if (table[luaKey].TryRead(out double s))
+                            property.SetValue(instance, s);
                     }
-                    else
+                    else if (propertyType == typeof(bool))
                     {
-
+                        if (table[luaKey].TryRead(out bool s))
+                            property.SetValue(instance, s);
                     }
                 }
-                return instance;
+                else if (propertyType == typeof(string))
+                {
+                    if (table[luaKey].TryRead(out string s))
+                        property.SetValue(instance, s);
+                }
+                else if(typeof(StringEnum).IsAssignableFrom(propertyType))
+                {
+                    if (!table[luaKey].TryRead(out string valueStr))
+                        continue;
+                    
+                    // Use reflection to call StringEnum.FromValue<T>(string)
+                    var fromValueMethod = typeof(StringEnum).GetMethod(nameof(StringEnum.FromValue))!.MakeGenericMethod(propertyType);
+                    var parsedEnum = fromValueMethod.Invoke(null, new object[] { valueStr });
+                    property.SetValue(instance, parsedEnum);
+                }
+                else if (propertyType.IsClass || propertyType.IsList())
+                {
+                    if (table[luaKey].TryRead(out LuaTable childTable))
+                    {
+                        var childResult = ParseTable(childTable, propertyType);
+                        if (childResult.Success)
+                            property.SetValue(instance, childResult.Result);
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            return ParseResult<object>.Ok(instance);
+        }
+
+        private static ParseResult<object> ParseAbstractClass(LuaTable table, Type abstractType) 
+        {
+            IEnumerable<Type> subClasses = Assembly.GetExecutingAssembly()
+            .GetTypes()
+            .Where(t => t.BaseType == abstractType);
+
+            foreach (var subclass in subClasses)
+            {
+                if (subclass.GetCustomAttributes(typeof(LuaClassByEnumAttribute<>)).FirstOrDefault() is ILuaClassByEnumAttribute enumAttribute)
+                {
+                    string key = enumAttribute.KeySelection;
+                    if (table[key].TryRead(out string s))
+                    {
+                        object val = Enum.Parse(enumAttribute.EnumType, s, true);
+                        if (val.Equals(enumAttribute.Value))
+                        {
+                            return ParseTable(table, subclass);
+                        }
+                    }
+                }
             }
 
+            return ParseResult<object>.Fail($"No suitable subclass found for {abstractType.Name}");
+        }
 
-            return null;
+        private static ParseResult<object> ParseValue(LuaValue value, Type targetType) 
+        {
+            if (targetType == typeof(string))
+            {
+                if (value.TryRead(out string s))
+                    return ParseResult<object>.Ok(s);
+            }
+            else if (targetType == typeof(int))
+            {
+                if (value.TryRead(out int i))
+                    return ParseResult<object>.Ok(i);
+            }
+            else if (targetType == typeof(double))
+            {
+                if (value.TryRead(out double d))
+                    return ParseResult<object>.Ok(d);
+            }
+            else if (targetType == typeof(bool))
+            {
+                if (value.TryRead(out bool b))
+                    return ParseResult<object>.Ok(b);
+            }
+
+            return ParseResult<object>.Fail($"Unsupported value type: {targetType.Name}");
         }
 
         private static async Task<LuaTable> ParseMissionFile(byte[] mizBytes) 

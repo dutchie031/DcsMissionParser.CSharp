@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.IO.Compression;
 using System.Reflection;
-using DcsMissionParser.CSharp.Annotations;
 using DcsMissionParser.Net;
+using DcsMissionParser.Net.Annotations;
 using DcsMissionParser.Net.Objects.Commons;
 using Lua;
 
@@ -92,6 +92,15 @@ namespace DcsMissionParser.Net.Parsers
                     var fromValueMethod = typeof(StringEnum).GetMethod(nameof(StringEnum.FromValue))!.MakeGenericMethod(valueType);
                     valueObj = fromValueMethod.Invoke(null, new object[] { valueStr });
                 }
+                else if(typeof(IntEnum).IsAssignableFrom(valueType))
+                {
+                    if (!item.Value.TryRead(out int valueInt))
+                        continue;
+                    
+                    // Use reflection to call IntEnum.FromValue<T>(int)
+                    var fromValueMethod = typeof(IntEnum).GetMethod(nameof(IntEnum.FromValue))!.MakeGenericMethod(valueType);
+                    valueObj = fromValueMethod.Invoke(null, new object[] { valueInt });
+                }
                 else if (valueType.IsClass)
                 {
                     if (!item.Value.TryRead(out LuaTable valueTable))
@@ -171,6 +180,21 @@ namespace DcsMissionParser.Net.Parsers
                     if (table[luaKey].TryRead(out string s))
                         property.SetValue(instance, s);
                 }
+                else if(propertyType.IsEnum)
+                {
+                    if(table[luaKey].Type == LuaValueType.String && table[luaKey].TryRead(out string enumStr))
+                    {
+                        if (Enum.TryParse(propertyType, enumStr, true, out var enumVal))
+                        {
+                            property.SetValue(instance, enumVal);
+                        }
+                    }
+                    else if(table[luaKey].Type == LuaValueType.Number && table[luaKey].TryRead(out int enumInt))
+                    {
+                        var enumVal = Enum.ToObject(propertyType, enumInt);
+                        property.SetValue(instance, enumVal);
+                    }
+                }
                 else if(typeof(StringEnum).IsAssignableFrom(propertyType))
                 {
                     if (!table[luaKey].TryRead(out string valueStr))
@@ -179,6 +203,16 @@ namespace DcsMissionParser.Net.Parsers
                     // Use reflection to call StringEnum.FromValue<T>(string)
                     var fromValueMethod = typeof(StringEnum).GetMethod(nameof(StringEnum.FromValue))!.MakeGenericMethod(propertyType);
                     var parsedEnum = fromValueMethod.Invoke(null, new object[] { valueStr });
+                    property.SetValue(instance, parsedEnum);
+                }
+                else if(typeof(IntEnum).IsAssignableFrom(propertyType))
+                {
+                    if (!table[luaKey].TryRead(out int valueInt))
+                        continue;
+                    
+                    // Use reflection to call IntEnum.FromValue<T>(int)
+                    var fromValueMethod = typeof(IntEnum).GetMethod(nameof(IntEnum.FromValue))!.MakeGenericMethod(propertyType);
+                    var parsedEnum = fromValueMethod.Invoke(null, new object[] { valueInt });
                     property.SetValue(instance, parsedEnum);
                 }
                 else if (propertyType.IsClass || propertyType.IsList())
@@ -202,17 +236,33 @@ namespace DcsMissionParser.Net.Parsers
         {
             IEnumerable<Type> subClasses = Assembly.GetExecutingAssembly()
             .GetTypes()
-            .Where(t => t.BaseType == abstractType);
+            .Where(t => {
+                if (abstractType.IsAssignableFrom(t))
+                    return true;
+                
+                // Handle generic types: check if base type is generic and matches the generic definition
+                if (abstractType.IsGenericType && t.BaseType?.IsGenericType == true)
+                {
+                    return t.BaseType.GetGenericTypeDefinition() == abstractType.GetGenericTypeDefinition();
+                }
+
+                return false;
+            });
 
             foreach (var subclass in subClasses)
             {
                 if (subclass.GetCustomAttributes(typeof(LuaClassByEnumAttribute<>)).FirstOrDefault() is ILuaClassByEnumAttribute enumAttribute)
                 {
-                    string key = enumAttribute.KeySelection;
-                    if (table[key].TryRead(out string s))
+                    if (enumAttribute.IsMatch(table))
                     {
-                        object val = Enum.Parse(enumAttribute.EnumType, s, true);
-                        if (val.Equals(enumAttribute.Value))
+                        return ParseTable(table, subclass);
+                    }
+                } else if (subclass.GetCustomAttributes(typeof(LuaClassByStringValue)).FirstOrDefault() is ILuaClassByStringValue luaClassByStringValue)
+                {
+                    string key = luaClassByStringValue.KeySelection;
+                    if (table[key].TryRead(out string val))
+                    {
+                        if (val.Equals(luaClassByStringValue.Value))
                         {
                             return ParseTable(table, subclass);
                         }

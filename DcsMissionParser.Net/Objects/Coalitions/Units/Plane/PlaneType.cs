@@ -1,4 +1,5 @@
 using System;
+using DcsMissionParser.Net.Annotations;
 using DcsMissionParser.Net.Objects.Commons;
 
 namespace DcsMissionParser.Net.Objects.Coalitions.Units.Plane;
@@ -6,6 +7,9 @@ namespace DcsMissionParser.Net.Objects.Coalitions.Units.Plane;
 public class PlaneType : StringEnum
 {
     private PlaneType(string value) : base(value) {}
+    
+    //get list from DCS-Lua-DataMine
+    //grep -r --no-filename  "^\ttype = " . | sed 's/^[[:space:]]*//' | sed 's/^type = \"//' | sed 's/\",//'
 
     public static readonly PlaneType FW190A8 = new("FW-190A8");
     public static readonly PlaneType MirageF1B = new("Mirage-F1B");

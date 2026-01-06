@@ -4,8 +4,8 @@
   "Coalitions": {
     "Neutrals": {
       "BullsEye": {
-        "X": 0,
-        "Y": 0
+        "X": 0.0,
+        "Y": 0.0
       },
       "NavPoints": [],
       "Name": "neutrals",
@@ -13,8 +13,8 @@
     },
     "Red": {
       "BullsEye": {
-        "X": 11557,
-        "Y": 371700
+        "X": 11557.0,
+        "Y": 371700.0
       },
       "NavPoints": [],
       "Name": "red",
@@ -37,11 +37,11 @@
                 "X": -258899.27645934,
                 "Y": 662329.44027585,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -65,7 +65,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -76,16 +76,136 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -258899.27645934,
                       "Y": 662329.44027585,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetReactionToThreatTask, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 1,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetRadarUsing, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 3,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": null
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitJettison, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 15,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -102,10 +222,19 @@
                       "Y": 641172.12103479,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -122,10 +251,19 @@
                       "Y": 627708.37242685,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -142,7 +280,16 @@
                       "Y": 680955.97970339,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -160,11 +307,11 @@
                 "X": -261988.74902414,
                 "Y": 615954.54254941,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -188,7 +335,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -199,16 +346,46 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -261988.74902414,
                       "Y": 615954.54254941,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -225,10 +402,19 @@
                       "Y": 557296.06476731,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -245,10 +431,19 @@
                       "Y": 543832.31615937,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -265,7 +460,16 @@
                       "Y": 597079.92343591,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -283,11 +487,11 @@
                 "X": -270898.59874842,
                 "Y": 622071.75280788,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -311,7 +515,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -322,16 +526,46 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -270898.59874842,
                       "Y": 622071.75280788,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -348,10 +582,19 @@
                       "Y": 563413.27502578,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -368,10 +611,19 @@
                       "Y": 549949.52641784,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -388,7 +640,16 @@
                       "Y": 603197.13369438,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -406,11 +667,11 @@
                 "X": -275685.98068983,
                 "Y": 624465.44377858,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -434,7 +695,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -445,16 +706,136 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -275685.98068983,
                       "Y": 624465.44377858,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetReactionToThreatTask, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 1,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetRadarUsing, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 3,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": null
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitJettison, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 15,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 7
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -471,10 +852,19 @@
                       "Y": 566072.9316599,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -491,10 +881,19 @@
                       "Y": 552609.18305196,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -511,7 +910,16 @@
                       "Y": 605856.7903285,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -529,11 +937,11 @@
                 "X": -280074.41413612,
                 "Y": 626061.23775905,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 251,
+                "StartTime": 0.0,
+                "Frequency": 251.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -557,7 +965,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -568,16 +976,46 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -280074.41413612,
                       "Y": 626061.23775905,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -594,10 +1032,19 @@
                       "Y": 567668.72564037,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -614,10 +1061,19 @@
                       "Y": 554204.97703243,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -634,7 +1090,16 @@
                       "Y": 607452.58430897,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -652,11 +1117,11 @@
                 "X": -285127.76174094,
                 "Y": 628188.96306634,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -680,7 +1145,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -691,16 +1156,126 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -285127.76174094,
                       "Y": 628188.96306634,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitAG, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 17,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetMissileAttackRange, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 18,
+                                    "Value": 4
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitWPPassReport, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 19,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -717,10 +1292,19 @@
                       "Y": 568200.65696719,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -737,10 +1321,19 @@
                       "Y": 554736.90835925,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -757,7 +1350,16 @@
                       "Y": 607984.51563579,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -775,11 +1377,11 @@
                 "X": -289117.24669212,
                 "Y": 628454.92872975,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 124,
+                "StartTime": 0.0,
+                "Frequency": 124.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -803,7 +1405,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -814,16 +1416,156 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -289117.24669212,
                       "Y": 628454.92872975,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetReactionToThreatTask, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 1,
+                                    "Value": 2
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetRadarUsing, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 3,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": null
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitJettison, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 15,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitWPPassReport, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 19,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 7
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 8
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -840,10 +1582,19 @@
                       "Y": 570062.41661107,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -860,10 +1611,19 @@
                       "Y": 556598.66800313,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -880,7 +1640,16 @@
                       "Y": 609846.27527967,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -898,11 +1667,11 @@
                 "X": -292308.83465306,
                 "Y": 628986.86005658,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -926,7 +1695,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -937,16 +1706,126 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -292308.83465306,
                       "Y": 628986.86005658,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitAG, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 17,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetMissileAttackRange, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 18,
+                                    "Value": 4
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitWPPassReport, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 19,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -963,10 +1842,19 @@
                       "Y": 570594.34793789,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -983,10 +1871,19 @@
                       "Y": 557130.59932995,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1003,7 +1900,16 @@
                       "Y": 610378.20660649,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -1021,11 +1927,11 @@
                 "X": -296298.31960423,
                 "Y": 629917.73987852,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -1049,7 +1955,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1060,16 +1966,126 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -296298.31960423,
                       "Y": 629917.73987852,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitAG, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 17,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetMissileAttackRange, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 18,
+                                    "Value": 4
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitWPPassReport, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 19,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1086,10 +2102,19 @@
                       "Y": 571525.22775983,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1106,10 +2131,19 @@
                       "Y": 558061.4791519,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1126,7 +2160,16 @@
                       "Y": 611309.08642844,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -1144,11 +2187,11 @@
                 "X": -300287.80455541,
                 "Y": 630981.60253217,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -1172,7 +2215,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1183,16 +2226,136 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -300287.80455541,
                       "Y": 630981.60253217,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetReactionToThreatTask, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 1,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetRadarUsing, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 3,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": null
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitJettison, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 15,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1209,10 +2372,19 @@
                       "Y": 572855.05607689,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1229,10 +2401,19 @@
                       "Y": 559391.30746895,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1249,7 +2430,16 @@
                       "Y": 612638.91474549,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -1267,11 +2457,11 @@
                 "X": -303346.40968464,
                 "Y": 632311.43084922,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -1295,7 +2485,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1306,16 +2496,126 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -303346.40968464,
                       "Y": 632311.43084922,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitAG, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 17,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetMissileAttackRange, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 18,
+                                    "Value": 4
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitWPPassReport, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 19,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1332,10 +2632,19 @@
                       "Y": 573386.98740372,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1352,10 +2661,19 @@
                       "Y": 559923.23879578,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1372,7 +2690,16 @@
                       "Y": 613170.84607232,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -1390,11 +2717,11 @@
                 "X": -306253.41438573,
                 "Y": 633838.07375721,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -1418,7 +2745,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1429,16 +2756,136 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -306253.41438573,
                       "Y": 633838.07375721,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetReactionToThreatTask, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 1,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetRadarUsing, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 3,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": null
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitJettison, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 15,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1455,10 +2902,19 @@
                       "Y": 575990.79124852,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1475,10 +2931,19 @@
                       "Y": 562527.04264058,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1495,7 +2960,16 @@
                       "Y": 615774.64991712,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -1513,11 +2987,11 @@
                 "X": -309484.89719618,
                 "Y": 634915.23469402,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -1541,7 +3015,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1552,16 +3026,46 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -309484.89719618,
                       "Y": 634915.23469402,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1578,10 +3082,19 @@
                       "Y": 576421.65562324,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1598,10 +3111,19 @@
                       "Y": 562957.9070153,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1618,7 +3140,16 @@
                       "Y": 616205.51429184,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -1636,11 +3167,11 @@
                 "X": -312608.66391295,
                 "Y": 635022.9507877,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -1664,7 +3195,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1675,16 +3206,56 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -312608.66391295,
                       "Y": 635022.9507877,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": null
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1701,10 +3272,19 @@
                       "Y": 576529.37171692,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1721,10 +3301,19 @@
                       "Y": 563065.62310898,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1741,7 +3330,16 @@
                       "Y": 616313.23038552,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -1759,11 +3357,11 @@
                 "X": -308946.31672777,
                 "Y": 648272.03031055,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -1787,7 +3385,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1798,16 +3396,136 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -308946.31672777,
                       "Y": 648272.03031055,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetReactionToThreatTask, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 1,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetRadarUsing, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 3,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": null
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitJettison, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 15,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1824,10 +3542,19 @@
                       "Y": 590101.59952082,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1844,10 +3571,19 @@
                       "Y": 576637.85091288,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1864,7 +3600,16 @@
                       "Y": 629885.45818942,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -1882,11 +3627,11 @@
                 "X": -314008.97313081,
                 "Y": 644825.11531274,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -1910,7 +3655,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1921,16 +3666,126 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -314008.97313081,
                       "Y": 644825.11531274,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetReactionToThreatTask, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 1,
+                                    "Value": 2
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetECMUsing, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 13,
+                                    "Value": 2
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitWPPassReport, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 19,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1947,10 +3802,19 @@
                       "Y": 586331.53624196,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1967,10 +3831,19 @@
                       "Y": 572867.78763402,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -1987,7 +3860,16 @@
                       "Y": 626115.39491056,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -2005,11 +3887,11 @@
                 "X": -316594.15937917,
                 "Y": 644717.39921906,
                 "Communication": true,
-                "StartTime": 0,
+                "StartTime": 0.0,
                 "Frequency": 127.5,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -2031,7 +3913,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2042,16 +3924,46 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -316594.15937917,
                       "Y": 644717.39921906,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2068,10 +3980,19 @@
                       "Y": 586223.82014828,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2088,10 +4009,19 @@
                       "Y": 572760.07154034,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2108,7 +4038,16 @@
                       "Y": 626007.67881688,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -2126,11 +4065,11 @@
                 "X": -320256.50656435,
                 "Y": 645040.5475001,
                 "Communication": true,
-                "StartTime": 0,
+                "StartTime": 0.0,
                 "Frequency": 127.5,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -2152,7 +4091,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2163,16 +4102,46 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -320256.50656435,
                       "Y": 645040.5475001,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2189,10 +4158,19 @@
                       "Y": 586546.96842932,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2209,10 +4187,19 @@
                       "Y": 573083.21982138,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2229,7 +4216,16 @@
                       "Y": 626330.82709792,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -2247,11 +4243,11 @@
                 "X": -231238.23021732,
                 "Y": 647730.02985618,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -2275,7 +4271,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2286,16 +4282,136 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -231238.23021732,
                       "Y": 647730.02985618,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetReactionToThreatTask, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 1,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetRadarUsing, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 3,
+                                    "Value": 1
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": null
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitJettison, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 15,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2312,10 +4428,19 @@
                       "Y": 626572.71061512,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2332,10 +4457,19 @@
                       "Y": 613108.96200718,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2352,7 +4486,16 @@
                       "Y": 666356.56928372,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }
@@ -2364,8 +4507,8 @@
     },
     "Blue": {
       "BullsEye": {
-        "X": -291014,
-        "Y": 617414
+        "X": -291014.0,
+        "Y": 617414.0
       },
       "NavPoints": [
         {
@@ -2374,8 +4517,8 @@
           "CallSignString": null,
           "Id": 165,
           "Properties": {
-            "VNAV": 0,
-            "Scale": 0
+            "VNAV": 3,
+            "Scale": 2
           }
         }
       ],
@@ -2399,11 +4542,11 @@
                 "X": -236616.04344442,
                 "Y": 486222.15519731,
                 "Communication": true,
-                "StartTime": 0,
-                "Frequency": 305,
+                "StartTime": 0.0,
+                "Frequency": 305.0,
                 "Units": [
                   {
-                    "Alt": 2000,
+                    "Alt": 2000.0,
                     "AltType": {
                       "Value": "BARO"
                     },
@@ -2427,7 +4570,7 @@
                 "Route": {
                   "Points": [
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2438,16 +4581,126 @@
                       "Type": {
                         "Value": "Turning Point"
                       },
-                      "ETA": 0,
+                      "ETA": 0.0,
                       "IsETALocked": true,
                       "X": -236616.04344442,
                       "Y": 486222.15519731,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitAG, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 17,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetMissileAttackRange, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 18,
+                                    "Value": 4
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitWPPassReport, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 19,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 4
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetProhibitRadioUsageContact, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 21,
+                                    "Value": false
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 5
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetAllowFormationSideSwap, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 35,
+                                    "Value": true
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 6
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Turning Point"
                       },
@@ -2464,10 +4717,60 @@
                       "Y": 465404.81367307,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": [
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": null
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 1
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": null
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 2
+                            },
+                            {
+                              "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.WrappedAction, DcsMissionParser.Net",
+                              "Params": {
+                                "Action": {
+                                  "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.SetReactionToThreatTask, DcsMissionParser.Net",
+                                  "Parameters": {
+                                    "OptionName": 1,
+                                    "Value": 2
+                                  },
+                                  "Id": {
+                                    "Value": "Option"
+                                  },
+                                  "Number": 1
+                                }
+                              },
+                              "Id": {
+                                "Value": "WrappedAction"
+                              },
+                              "Number": 3
+                            }
+                          ]
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 2000,
+                      "Altitude": 2000.0,
                       "Action": {
                         "Value": "Fly Over Point"
                       },
@@ -2484,10 +4787,19 @@
                       "Y": 434352.27923275,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     },
                     {
-                      "Altitude": 30,
+                      "Altitude": 30.0,
                       "Action": {
                         "Value": "Landing"
                       },
@@ -2502,7 +4814,16 @@
                       "Y": 462218.921875,
                       "IsSpeedLocked": true,
                       "FormationTemplate": "",
-                      "Tasks": []
+                      "Task": {
+                        "$type": "DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks.ComboTask, DcsMissionParser.Net",
+                        "Parameters": {
+                          "Tasks": []
+                        },
+                        "Id": {
+                          "Value": "ComboTask"
+                        },
+                        "Number": 1
+                      }
                     }
                   ]
                 }

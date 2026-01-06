@@ -1,5 +1,5 @@
-﻿using DcsMissionParser.CSharp.Annotations;
-using DcsMissionParser.Net;
+﻿using DcsMissionParser.Net;
+using DcsMissionParser.Net.Annotations;
 using System.Reflection;
 using System.Text;
 
@@ -11,7 +11,7 @@ namespace DcsMissionParser.Net.Parsers
         {
             StringWriter writer = new StringWriter();
             writer.WriteLine("mission = ");
-            WriteObjectAsLuaString(mizObject, writer, 0);
+            WriteObjectAsLuaString(mizObject, writer, 1);
             return ParseResult<byte[]>.Ok(Encoding.UTF8.GetBytes(writer.ToString()));
         }
 
@@ -54,7 +54,7 @@ namespace DcsMissionParser.Net.Parsers
                 int i = 1;
                 foreach (object? obj in objects)
                 {
-                    sw.WriteLineIndent($"[{i}] = ", indentation);
+                    sw.WriteIndent($"[{i}] = ", indentation);
                     WriteObjectAsLuaString(obj, sw, indentation + 1);
                     i++;
                 }
@@ -73,11 +73,22 @@ namespace DcsMissionParser.Net.Parsers
             }
             else if (type.IsEnum) 
             {
-                sw.WriteLine($"\"{instance}\",", indentation);
+                sw.WriteLine($"{(int)instance},", indentation);
+            }
+            else if(typeof(IntEnum).IsAssignableFrom(type))
+            {
+                IntEnum intEnum = (IntEnum)instance;
+                sw.WriteLine($"{intEnum.Value},", indentation);
+            }
+            else if(typeof(StringEnum).IsAssignableFrom(type))
+            {
+                StringEnum stringEnum = (StringEnum)instance;
+                sw.WriteLine($"\"{stringEnum.Value}\",", indentation);
             }
             else if (type.IsClass)
             {
-                sw.WriteLineIndent("{", indentation);
+                sw.WriteLine();
+                sw.WriteLineIndent("{", indentation - 1);
                 foreach (var property in type.GetProperties(BindingFlags.Public | BindingFlags.Instance))
                 {
                     if (property.GetCustomAttributes(typeof(LuaKeyAttribute), false).FirstOrDefault() is not LuaKeyAttribute attribute)
@@ -88,10 +99,10 @@ namespace DcsMissionParser.Net.Parsers
                     sw.WriteIndent($"[\"{attribute.Name}\"] = ", indentation);
                     WriteObjectAsLuaString(value, sw, indentation + 1);
                 }
-                if (indentation != 0)
-                    sw.WriteLineIndent("},", indentation);
+                if (indentation != 1)
+                    sw.WriteLineIndent("},", indentation -1);
                 else 
-                    sw.WriteLineIndent("}", indentation);
+                    sw.WriteLineIndent("}", indentation  -1);
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using DcsMissionParser.Net;
+﻿using System.Diagnostics;
+using DcsMissionParser.Net;
 using DcsMissionParser.Net.Objects.Drawing;
 
 namespace DcsMissionParser.Net.Tests
@@ -12,17 +13,19 @@ namespace DcsMissionParser.Net.Tests
 
 
         static ParseResult<MizObject>? result;
+        static double duration = double.MaxValue;
 
         [AssemblyInitialize]
         public static async Task AssemblyInit(TestContext context)
         {
+            long started = Stopwatch.GetTimestamp();
             byte[] bytes = File.ReadAllBytes(file);
             result = await MissionSerializer.Deserialize(bytes);
-
-            string json = System.Text.Json.JsonSerializer.Serialize(result.Result, new System.Text.Json.JsonSerializerOptions()
+            duration =  Stopwatch.GetElapsedTime(started).TotalMilliseconds;
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(result.Result, new Newtonsoft.Json.JsonSerializerSettings()
             {
-                WriteIndented = true,
-                IncludeFields = true
+                Formatting = Newtonsoft.Json.Formatting.Indented,
+                TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto
             });
 
             File.WriteAllText(parse_output, json);

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="CoordMapping/" />
+    <Folder Include="Objects/Coalitions/Routes/Common/" />
     <Folder Include="Objects/Coalitions/Routes/Plane/Tasks/" />
     <Folder Include="Objects/Coalitions/Routes/Plane/Tasks/Options/" />
     <Folder Include="Objects/Commons/Types/" />

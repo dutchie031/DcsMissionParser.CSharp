@@ -44,8 +44,8 @@ public class Point
     [LuaKey("formation_template")]
     public string FormationTemplate { get; set; } = string.Empty; 
 
-    [LuaKey("tasks")]
-    public List<PointTask> Tasks { get; set; } = [];
+    [LuaKey("task")]
+    public PointTask Task { get; set; } = new ComboTask();
 
 }
 

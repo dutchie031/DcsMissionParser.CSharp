@@ -1,5 +1,5 @@
 using System;
-using DcsMissionParser.CSharp.Annotations;
+using DcsMissionParser.Net.Annotations;
 using DcsMissionParser.Net.Annotations;
 using DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks;
 using DcsMissionParser.Net.Objects.Commons;

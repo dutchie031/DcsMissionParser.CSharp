@@ -1,4 +1,4 @@
-﻿using DcsMissionParser.CSharp.Annotations;
+﻿using DcsMissionParser.Net.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,4 @@
-﻿using DcsMissionParser.CSharp.Annotations;
+﻿using DcsMissionParser.Net.Annotations;
 using DcsMissionParser.Net.Objects.Coalitions.Countries;
 using DcsMissionParser.Net.Objects.Commons;
 using System;

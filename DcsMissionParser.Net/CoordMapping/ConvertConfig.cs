@@ -11,6 +11,7 @@ public class ConvertConfig
         {
             "caucasus" => new Caucasus(),
             "germanycw" => new GermanyCW(),
+            "kola" => new Kola(),
             _ => null
         };
     }
@@ -36,6 +37,18 @@ public class ConvertConfig
             ScaleFactor = 0.9996;
             FalseEasting = 35427.617;
             FalseNorthing = -6061633.130;
+        }
+    }
+
+    internal class Kola : TransverseMercatorSettings
+    {
+        [SetsRequiredMembers]
+        public Kola()
+        {
+            CentralMeridian = 21;
+            ScaleFactor = 0.9996;
+            FalseEasting = -62702.006;
+            FalseNorthing = -7543624.991;
         }
     }
 

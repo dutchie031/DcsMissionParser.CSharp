@@ -10,14 +10,14 @@ local getBounds = function()
         }
     elseif env.mission.theatre == "GermanyCW" then
         return {
-            topLeft     = { x = 130000.0, z = -672000.0, y = 0.0 },
+            topLeft     = { x = 130000.0, z = -1000000.0, y = 0.0 },
             topRight    = { x =  140000.0, z = -300000.0, y = 0.0 },
             bottomLeft  = { x = -530000.0, z = -1000000.0,    y = 0.0 },
             bottomRight = { x =  -530000.0, z = -300000.0,    y = 0.0 },
         }
     elseif env.mission.theatre == "Kola" then
         return {
-            topLeft     = { x = 548070.0, z = -1000000.0, y = 0.0 },
+            topLeft     = { x = 548070.0, z = -672000.0, y = 0.0 },
             topRight    = { x =  482065.0, z = 671626, y = 0.0 },
             bottomLeft  = { x = -127500.0, z = -698000.0,    y = 0.0 },
             bottomRight = { x =  -310000.0, z = 840730.0,    y = 0.0 },

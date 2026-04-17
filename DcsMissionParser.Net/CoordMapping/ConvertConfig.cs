@@ -11,6 +11,7 @@ public class ConvertConfig
         {
             "caucasus" => new Caucasus(),
             "germanycw" => new GermanyCW(),
+            "kola" => new Kola(),
             _ => null
         };
     }

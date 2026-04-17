@@ -39,6 +39,18 @@ public class ConvertConfig
         }
     }
 
+    internal class Kola : TransverseMercatorSettings
+    {
+        [SetsRequiredMembers]
+        public Kola()
+        {
+            CentralMeridian = 21;
+            ScaleFactor = 0.9996;
+            FalseEasting = -62702.006;
+            FalseNorthing = -7543624.991;
+        }
+    }
+
     internal class TransverseMercatorSettings
     {
         public required double CentralMeridian { get; init; }

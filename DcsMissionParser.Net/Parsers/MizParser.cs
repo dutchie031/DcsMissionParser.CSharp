@@ -237,6 +237,9 @@ namespace DcsMissionParser.Net.Parsers
             IEnumerable<Type> subClasses = Assembly.GetExecutingAssembly()
             .GetTypes()
             .Where(t => {
+                if (t == abstractType)
+                    return false;
+
                 if (abstractType.IsAssignableFrom(t))
                     return true;
                 

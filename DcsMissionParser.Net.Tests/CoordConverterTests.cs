@@ -70,5 +70,37 @@ public class CoordConverterTests
         Assert.IsLessThan(0.00001, Math.Abs(52.734293207779 - ll.Lat));
         Assert.IsLessThan(0.00001, Math.Abs(9.2505764147083 - ll.Lon));
     }
+    
+    [TestMethod]
+    public void TestLLtoLO_Kola()
+    {
+        LatLong ll = new()
+        {
+            Lat = 72.141374036618,
+            Lon = 26.775287679625
+        };
+
+        var converter = CoordConverter.CreateForMap("Kola");
+        var lo = converter.LLtoLO(ll);
+        Assert.IsNotNull(lo);
+        Assert.IsLessThan(1, Math.Abs(470556 - lo.X));
+        Assert.IsLessThan(1, Math.Abs(134706 - lo.Y));
+    }
+
+    [TestMethod]
+    public void TestLOtoLL_Kola()
+    {
+        DcsCoord lo = new()
+        {
+            X = 470556,
+            Y = 134706
+        };
+        
+        var converter = CoordConverter.CreateForMap("Kola");
+        var ll = converter.LOtoLL(lo);
+        Assert.IsNotNull(ll);
+        Assert.IsLessThan(0.00001, Math.Abs(72.141374036618 - ll.Lat));
+        Assert.IsLessThan(0.00001, Math.Abs(26.775287679625 - ll.Lon));
+    }
 
 }

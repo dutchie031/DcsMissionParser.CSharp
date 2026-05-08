@@ -46,7 +46,7 @@ namespace DcsMissionParser.Net.Parsers
             Type type = instance.GetType();
             if (IsList(type))
             {
-                List<object>? objects = (instance as IEnumerable<object>)?.Cast<object>().ToList();
+                List<object>? objects = (instance as System.Collections.IEnumerable)?.Cast<object>().ToList();
                 if (objects == null)
                     return;
 

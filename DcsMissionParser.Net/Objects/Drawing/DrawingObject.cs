@@ -34,10 +34,6 @@ namespace DcsMissionParser.Net.Objects.Drawing
 
         [LuaKey("style")]
         public required string Style { get; set; }
-
-        [LuaKey("thickness")]
-        public required double Thickness { get; set; }
-
     }
 
     public enum PrimitiveType
@@ -73,6 +69,9 @@ namespace DcsMissionParser.Net.Objects.Drawing
 
         [LuaKey("fillColorString")]
         public string? FillColorString { get; set; }
+
+        [LuaKey("thickness")]
+        public required double Thickness { get; set; }
 
     }
 
@@ -180,6 +179,9 @@ namespace DcsMissionParser.Net.Objects.Drawing
         [LuaKey("points")]
         public List<Vec2> Points { get; set; } = [];
 
+        [LuaKey("thickness")]
+        public required double Thickness { get; set; }
+
     }
 
     [LuaClassByEnum<LineMode>("lineMode", LineMode.Segment)]
@@ -235,6 +237,9 @@ namespace DcsMissionParser.Net.Objects.Drawing
 
         [LuaKey("font")]
         public string Font { get; set; } = "DejaVuLGCSansCondensed.ttf";
+
+        [LuaKey("borderThickness")]
+        public double BorderThickness { get; set; } = 8;
     }
 
     #endregion

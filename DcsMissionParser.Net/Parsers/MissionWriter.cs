@@ -35,7 +35,7 @@ namespace DcsMissionParser.Net.Parsers
             sw.Write(text);
         }
 
-        private static void WriteObjectAsLuaString(object? instance, StringWriter sw, int indentation = 0, bool enumAsString = false) 
+        private static void WriteObjectAsLuaString(object? instance, StringWriter sw, int indentation = 0, AsStringAttribute? asStringAttribute = null) 
         {
             if (instance == null) 
             {
@@ -73,7 +73,9 @@ namespace DcsMissionParser.Net.Parsers
             }
             else if (type.IsEnum) 
             {
-                if (enumAsString)
+                if (asStringAttribute != null && asStringAttribute.ToLower)
+                    sw.WriteLine($"\"{instance.ToString()?.ToLower()}\",", indentation);
+                else if (asStringAttribute != null)
                     sw.WriteLine($"\"{instance}\",", indentation);
                 else
                     sw.WriteLine($"{(int)instance},", indentation);
@@ -97,14 +99,14 @@ namespace DcsMissionParser.Net.Parsers
                     if (property.GetCustomAttributes(typeof(LuaKeyAttribute), false).FirstOrDefault() is not LuaKeyAttribute attribute)
                         continue;
 
-                    bool hasAsStringAttribute = false;
+                    AsStringAttribute? localAsStringAttribute = null;
                     if(property.PropertyType.IsEnum)
-                        hasAsStringAttribute = property.GetCustomAttribute<AsStringAttribute>() != null;
+                        localAsStringAttribute = property.GetCustomAttribute<AsStringAttribute>();
 
                     object? value = property.GetValue(instance);
 
                     sw.WriteIndent($"[\"{attribute.Name}\"] = ", indentation);
-                    WriteObjectAsLuaString(value, sw, indentation + 1, enumAsString: hasAsStringAttribute);
+                    WriteObjectAsLuaString(value, sw, indentation + 1, asStringAttribute: localAsStringAttribute);
                 }
                 if (indentation != 1)
                     sw.WriteLineIndent("},", indentation -1);

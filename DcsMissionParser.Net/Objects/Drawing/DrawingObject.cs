@@ -63,7 +63,7 @@ namespace DcsMissionParser.Net.Objects.Drawing
             PrimitiveType = PrimitiveType.Polygon;
         }
         
-        [AsString]
+        [AsString(lower: true)]
         [LuaKey("polygonMode")]
         public PolygonMode PolygonMode { get; set; }
 
@@ -169,7 +169,7 @@ namespace DcsMissionParser.Net.Objects.Drawing
             PrimitiveType = PrimitiveType.Line;
         }
 
-        [AsString]
+        [AsString(lower: true)]
         [LuaKey("lineMode")]
         public LineMode LineMode { get; set; }
 

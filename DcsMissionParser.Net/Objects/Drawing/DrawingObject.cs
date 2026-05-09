@@ -213,6 +213,26 @@ namespace DcsMissionParser.Net.Objects.Drawing
 
     #region TextBoxes
 
+    [LuaClassByEnum<PrimitiveType>("primitiveType", PrimitiveType.TextBox)]
+    public class TextBox : DrawingObject
+    {
+        public TextBox() : base() 
+        {
+            PrimitiveType = PrimitiveType.TextBox;
+        }
+
+        [LuaKey("text")]
+        public string Text { get; set; } = string.Empty;
+
+        [LuaKey("fontSize")]
+        public int FontSize { get; set; }
+
+        [LuaKey("angle")]
+        public double Angle { get; set; }
+
+        [LuaKey("font")]
+        public string Font { get; set; } = "DejaVuLGCSansCondensed.ttf";
+    }
 
     #endregion
 }

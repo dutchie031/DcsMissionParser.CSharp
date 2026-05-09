@@ -1,4 +1,5 @@
-﻿using DcsMissionParser.Net;
+﻿using System.Diagnostics;
+using DcsMissionParser.Net;
 using DcsMissionParser.Net.Objects.Drawing;
 
 namespace DcsMissionParser.Net.Tests
@@ -11,18 +12,20 @@ namespace DcsMissionParser.Net.Tests
         static string mission_output = "../../../../.ref/TestDrawings_MissionOuput";
 
 
-        static ParseResult<MizObject> result;
+        static ParseResult<MizObject>? result;
+        static double duration = double.MaxValue;
 
         [AssemblyInitialize]
         public static async Task AssemblyInit(TestContext context)
         {
+            long started = Stopwatch.GetTimestamp();
             byte[] bytes = File.ReadAllBytes(file);
             result = await MissionSerializer.Deserialize(bytes);
-
-            string json = System.Text.Json.JsonSerializer.Serialize(result.Result, new System.Text.Json.JsonSerializerOptions()
+            duration =  Stopwatch.GetElapsedTime(started).TotalMilliseconds;
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(result.Result, new Newtonsoft.Json.JsonSerializerSettings()
             {
-                WriteIndented = true,
-                IncludeFields = true
+                Formatting = Newtonsoft.Json.Formatting.Indented,
+                TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto
             });
 
             File.WriteAllText(parse_output, json);
@@ -31,7 +34,7 @@ namespace DcsMissionParser.Net.Tests
         [TestMethod]
         public async Task Parsed_FreePolygon() 
         {
-            var drawingObject = result.Result?.Drawings?.Layers
+            var drawingObject = result?.Result?.Drawings?.Layers
                 .FirstOrDefault(x => x.Name == "Author")?
                 .Objects
                 .FirstOrDefault(x => x.PrimitiveType == PrimitiveType.Polygon && ((Polygon)x).PolygonMode == PolygonMode.Free);
@@ -40,9 +43,18 @@ namespace DcsMissionParser.Net.Tests
         }
 
         [TestMethod]
+        public async Task Parsed_Success()
+        {
+            if (result?.Success != true) 
+            {
+                Assert.Fail(result?.FailureReason ?? "Unknown parsing failure");
+            }
+        }
+
+        [TestMethod]
         public async Task Serialize() 
         {
-            MizObject mizObject = result.Result!;
+            MizObject mizObject = result?.Result!;
 
             var parseResult = await MissionSerializer.Serialize(mizObject);
             if (!parseResult.Success) 

@@ -1,5 +1,5 @@
-﻿using DcsMissionParser.CSharp.Annotations;
-using DcsMissionParser.Net;
+﻿using DcsMissionParser.Net;
+using DcsMissionParser.Net.Annotations;
 using System.Reflection;
 using System.Text;
 
@@ -11,7 +11,7 @@ namespace DcsMissionParser.Net.Parsers
         {
             StringWriter writer = new StringWriter();
             writer.WriteLine("mission = ");
-            WriteObjectAsLuaString(mizObject, writer, 0);
+            WriteObjectAsLuaString(mizObject, writer, 1);
             return ParseResult<byte[]>.Ok(Encoding.UTF8.GetBytes(writer.ToString()));
         }
 
@@ -35,7 +35,7 @@ namespace DcsMissionParser.Net.Parsers
             sw.Write(text);
         }
 
-        private static void WriteObjectAsLuaString(object? instance, StringWriter sw, int indentation = 0) 
+        private static void WriteObjectAsLuaString(object? instance, StringWriter sw, int indentation = 0, AsStringAttribute? asStringAttribute = null) 
         {
             if (instance == null) 
             {
@@ -46,7 +46,7 @@ namespace DcsMissionParser.Net.Parsers
             Type type = instance.GetType();
             if (IsList(type))
             {
-                List<object>? objects = (instance as IEnumerable<object>)?.Cast<object>().ToList();
+                List<object>? objects = (instance as System.Collections.IEnumerable)?.Cast<object>().ToList();
                 if (objects == null)
                     return;
 
@@ -54,7 +54,7 @@ namespace DcsMissionParser.Net.Parsers
                 int i = 1;
                 foreach (object? obj in objects)
                 {
-                    sw.WriteLineIndent($"[{i}] = ", indentation);
+                    sw.WriteIndent($"[{i}] = ", indentation);
                     WriteObjectAsLuaString(obj, sw, indentation + 1);
                     i++;
                 }
@@ -73,25 +73,45 @@ namespace DcsMissionParser.Net.Parsers
             }
             else if (type.IsEnum) 
             {
-                sw.WriteLine($"\"{instance}\",", indentation);
+                if (asStringAttribute != null && asStringAttribute.ToLower)
+                    sw.WriteLine($"\"{instance.ToString()?.ToLower()}\",", indentation);
+                else if (asStringAttribute != null)
+                    sw.WriteLine($"\"{instance}\",", indentation);
+                else
+                    sw.WriteLine($"{(int)instance},", indentation);
+            }
+            else if(typeof(IntEnum).IsAssignableFrom(type))
+            {
+                IntEnum intEnum = (IntEnum)instance;
+                sw.WriteLine($"{intEnum.Value},", indentation);
+            }
+            else if(typeof(StringEnum).IsAssignableFrom(type))
+            {
+                StringEnum stringEnum = (StringEnum)instance;
+                sw.WriteLine($"\"{stringEnum.Value}\",", indentation);
             }
             else if (type.IsClass)
             {
-                sw.WriteLineIndent("{", indentation);
+                sw.WriteLine();
+                sw.WriteLineIndent("{", indentation - 1);
                 foreach (var property in type.GetProperties(BindingFlags.Public | BindingFlags.Instance))
                 {
                     if (property.GetCustomAttributes(typeof(LuaKeyAttribute), false).FirstOrDefault() is not LuaKeyAttribute attribute)
                         continue;
 
+                    AsStringAttribute? localAsStringAttribute = null;
+                    if(property.PropertyType.IsEnum)
+                        localAsStringAttribute = property.GetCustomAttribute<AsStringAttribute>();
+
                     object? value = property.GetValue(instance);
 
                     sw.WriteIndent($"[\"{attribute.Name}\"] = ", indentation);
-                    WriteObjectAsLuaString(value, sw, indentation + 1);
+                    WriteObjectAsLuaString(value, sw, indentation + 1, asStringAttribute: localAsStringAttribute);
                 }
-                if (indentation != 0)
-                    sw.WriteLineIndent("},", indentation);
+                if (indentation != 1)
+                    sw.WriteLineIndent("},", indentation -1);
                 else 
-                    sw.WriteLineIndent("}", indentation);
+                    sw.WriteLineIndent("}", indentation  -1);
             }
         }
     }

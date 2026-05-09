@@ -1,6 +1,6 @@
 using System;
 
-namespace DcsMissionParser.CSharp.Annotations;
+namespace DcsMissionParser.Net.Annotations;
 
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
 internal class LuaKeyAttribute : Attribute

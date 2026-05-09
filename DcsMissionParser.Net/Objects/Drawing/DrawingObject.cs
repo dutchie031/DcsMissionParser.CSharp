@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using DcsMissionParser.CSharp.Annotations;
+using DcsMissionParser.Net.Annotations;
 using DcsMissionParser.Net.Objects.Commons;
 using Lua;
 
@@ -7,6 +7,7 @@ namespace DcsMissionParser.Net.Objects.Drawing
 {
     public abstract class DrawingObject
     {
+        [AsString]
         [LuaKey("primitiveType")]
         public required PrimitiveType PrimitiveType { get; set; }
 
@@ -29,14 +30,10 @@ namespace DcsMissionParser.Net.Objects.Drawing
         /// Hex ARGB
         /// </summary>
         [LuaKey("colorString")]
-        public required string ColorString { get; set; }
+        public required string ColorString { get; set; } = "0xff0000ff";
 
         [LuaKey("style")]
         public required string Style { get; set; }
-
-        [LuaKey("thickness")]
-        public required double Thickness { get; set; }
-
     }
 
     public enum PrimitiveType
@@ -66,11 +63,15 @@ namespace DcsMissionParser.Net.Objects.Drawing
             PrimitiveType = PrimitiveType.Polygon;
         }
         
+        [AsString(lower: true)]
         [LuaKey("polygonMode")]
         public PolygonMode PolygonMode { get; set; }
 
         [LuaKey("fillColorString")]
         public string? FillColorString { get; set; }
+
+        [LuaKey("thickness")]
+        public required double Thickness { get; set; }
 
     }
 
@@ -168,6 +169,7 @@ namespace DcsMissionParser.Net.Objects.Drawing
             PrimitiveType = PrimitiveType.Line;
         }
 
+        [AsString(lower: true)]
         [LuaKey("lineMode")]
         public LineMode LineMode { get; set; }
 
@@ -176,6 +178,9 @@ namespace DcsMissionParser.Net.Objects.Drawing
 
         [LuaKey("points")]
         public List<Vec2> Points { get; set; } = [];
+
+        [LuaKey("thickness")]
+        public required double Thickness { get; set; }
 
     }
 
@@ -210,6 +215,32 @@ namespace DcsMissionParser.Net.Objects.Drawing
 
     #region TextBoxes
 
+    [LuaClassByEnum<PrimitiveType>("primitiveType", PrimitiveType.TextBox)]
+    public class TextBox : DrawingObject
+    {
+        public TextBox() : base() 
+        {
+            PrimitiveType = PrimitiveType.TextBox;
+        }
+
+        [LuaKey("text")]
+        public string Text { get; set; } = string.Empty;
+
+        [LuaKey("fontSize")]
+        public int FontSize { get; set; }
+
+        [LuaKey("angle")]
+        public double Angle { get; set; }
+
+        [LuaKey("fillColorString")]
+        public string FillColorString { get; set; } = "0xff0000ff";
+
+        [LuaKey("font")]
+        public string Font { get; set; } = "DejaVuLGCSansCondensed.ttf";
+
+        [LuaKey("borderThickness")]
+        public double BorderThickness { get; set; } = 8;
+    }
 
     #endregion
 }

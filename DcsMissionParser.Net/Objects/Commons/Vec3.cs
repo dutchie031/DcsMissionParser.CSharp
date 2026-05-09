@@ -1,4 +1,4 @@
-﻿using DcsMissionParser.CSharp.Annotations;
+﻿using DcsMissionParser.Net.Annotations;
 
 namespace DcsMissionParser.Net.Objects.Commons
 {

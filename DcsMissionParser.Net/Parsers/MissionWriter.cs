@@ -35,7 +35,7 @@ namespace DcsMissionParser.Net.Parsers
             sw.Write(text);
         }
 
-        private static void WriteObjectAsLuaString(object? instance, StringWriter sw, int indentation = 0) 
+        private static void WriteObjectAsLuaString(object? instance, StringWriter sw, int indentation = 0, bool enumAsString = false) 
         {
             if (instance == null) 
             {
@@ -73,7 +73,10 @@ namespace DcsMissionParser.Net.Parsers
             }
             else if (type.IsEnum) 
             {
-                sw.WriteLine($"{(int)instance},", indentation);
+                if (enumAsString)
+                    sw.WriteLine($"\"{instance}\",", indentation);
+                else
+                    sw.WriteLine($"{(int)instance},", indentation);
             }
             else if(typeof(IntEnum).IsAssignableFrom(type))
             {
@@ -94,10 +97,14 @@ namespace DcsMissionParser.Net.Parsers
                     if (property.GetCustomAttributes(typeof(LuaKeyAttribute), false).FirstOrDefault() is not LuaKeyAttribute attribute)
                         continue;
 
+                    bool hasAsStringAttribute = false;
+                    if(property.PropertyType.IsEnum)
+                        hasAsStringAttribute = property.GetCustomAttribute<AsStringAttribute>() != null;
+
                     object? value = property.GetValue(instance);
 
                     sw.WriteIndent($"[\"{attribute.Name}\"] = ", indentation);
-                    WriteObjectAsLuaString(value, sw, indentation + 1);
+                    WriteObjectAsLuaString(value, sw, indentation + 1, enumAsString: hasAsStringAttribute);
                 }
                 if (indentation != 1)
                     sw.WriteLineIndent("},", indentation -1);

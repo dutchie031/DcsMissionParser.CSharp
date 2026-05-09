@@ -5,6 +5,9 @@
 
 .DS_Store
 
+.ref/TestDrawings_MissionOuput
+.ref/TestDrawings_ParseOutput.json
+
 # User-specific files
 *.rsuser
 *.suo

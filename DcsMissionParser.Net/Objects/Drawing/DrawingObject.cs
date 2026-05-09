@@ -30,7 +30,7 @@ namespace DcsMissionParser.Net.Objects.Drawing
         /// Hex ARGB
         /// </summary>
         [LuaKey("colorString")]
-        public required string ColorString { get; set; }
+        public required string ColorString { get; set; } = "0xff0000ff";
 
         [LuaKey("style")]
         public required string Style { get; set; }
@@ -229,6 +229,9 @@ namespace DcsMissionParser.Net.Objects.Drawing
 
         [LuaKey("angle")]
         public double Angle { get; set; }
+
+        [LuaKey("fillColorString")]
+        public string FillColorString { get; set; } = "0xff0000ff";
 
         [LuaKey("font")]
         public string Font { get; set; } = "DejaVuLGCSansCondensed.ttf";

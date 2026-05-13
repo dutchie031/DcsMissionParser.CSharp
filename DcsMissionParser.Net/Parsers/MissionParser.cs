@@ -9,20 +9,24 @@ using Lua;
 namespace DcsMissionParser.Net.Parsers
 {
 
-    internal static class MizParser
+    internal static class MissionParser
     {
-        public static async Task<ParseResult<MizObject>> TryParse(byte[] mizBytes) 
+        public static async Task<ParseResult<DcsMission>> TryParse(byte[] missionBytes) 
         {
-            if(!GetMissionFile(mizBytes, out byte[] missionBytes, out string failureReason)) 
-            {
-                return ParseResult<MizObject>.Fail(failureReason);
-            }
-
             LuaTable missionTable = await ParseMissionFile(missionBytes);
-            var parseResult = ParseTable(missionTable, typeof(MizObject));
-            if (parseResult.Success && parseResult.Result is MizObject mizObject)
-                return ParseResult<MizObject>.Ok(mizObject);
-            return ParseResult<MizObject>.Fail(parseResult.FailureReason);
+            var parseResult = ParseTable(missionTable, typeof(DcsMission));
+            if (parseResult.Success && parseResult.Result is DcsMission mizObject)
+                return ParseResult<DcsMission>.Ok(mizObject);
+            return ParseResult<DcsMission>.Fail(parseResult.FailureReason);
+        }
+
+        public static async Task<ParseResult<DcsMission>> TryParse(Stream missionStream)
+        {
+            LuaTable missionTable = await ParseMissionFile(missionStream);
+            var parseResult = ParseTable(missionTable, typeof(DcsMission));
+            if (parseResult.Success && parseResult.Result is DcsMission mizObject)
+                return ParseResult<DcsMission>.Ok(mizObject);
+            return ParseResult<DcsMission>.Fail(parseResult.FailureReason);
         }
 
         private static bool IsList(this Type target)
@@ -304,7 +308,6 @@ namespace DcsMissionParser.Net.Parsers
 
         private static async Task<LuaTable> ParseMissionFile(byte[] mizBytes) 
         {
-
             var state = LuaState.Create();
             await state.DoStringAsync(System.Text.Encoding.UTF8.GetString(mizBytes));
             LuaTable table = state.Environment["mission"].Read<LuaTable>();
@@ -312,25 +315,13 @@ namespace DcsMissionParser.Net.Parsers
             return table;
         }
 
-
-        private static bool GetMissionFile(byte[] miz, out byte[] mission, out string failureReason)
+        private static async Task<LuaTable> ParseMissionFile(Stream mizStream)
         {
-            using ZipArchive archive = new ZipArchive(new MemoryStream(miz), ZipArchiveMode.Read);
-            ZipArchiveEntry? missionEntry = archive.GetEntry("mission");
-            if (missionEntry == null)
-            {
-                failureReason = "The .miz file does not contain a mission file";
-                mission = [];
-                return false;
-            }
-
-            using Stream missionStream = missionEntry.Open();
-            using MemoryStream ms = new MemoryStream();
-            missionStream.CopyTo(ms);
-            mission = ms.ToArray();
-            failureReason = string.Empty;
-            return true;
+            var state = LuaState.Create();
+            using StreamReader reader = new (mizStream);
+            await state.DoStringAsync(reader.ReadToEnd());
+            LuaTable table = state.Environment["mission"].Read<LuaTable>();
+            return table;
         }
-
     }
 }

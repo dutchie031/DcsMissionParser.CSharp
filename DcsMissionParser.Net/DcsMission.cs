@@ -9,10 +9,10 @@ using DcsMissionParser.Net.Objects.Weather;
 
 namespace DcsMissionParser.Net
 {
-    public class MizObject
+    public class DcsMission
     {
         // Internal constructor to prevent external instantiation without using the parser
-        public MizObject() { }
+        public DcsMission() { }
 
         [LuaKey("drawings")]
         public Drawings? Drawings { get; set; }
@@ -47,7 +47,7 @@ namespace DcsMissionParser.Net
         //[LuaKey("failures")]
         //public Dictionary<object, Failure> Failures { get; set; } = [];
 
-        public static MizObject CreateNewMission(string Theatre)
+        public static DcsMission CreateNewMission(string Theatre)
         {
             return DefaultMission.Create(Theatre);
         }
@@ -59,25 +59,12 @@ namespace DcsMissionParser.Net
                 throw new Exception("Theatre is required to save mission.");
             }
 
-            var mizBytes = await MissionSerializer.Serialize(this);
+            var mizBytes = await MizSerializer.Serialize(this);
             if(!mizBytes.Success || mizBytes.Result == null)
             {
                 throw new Exception($"Failed to serialize mission: {mizBytes.FailureReason}");
             }
-
-            using ZipArchive zip = ZipFile.Open(filePath, ZipArchiveMode.Create);
-            var entry = zip.CreateEntry("mission");
-            using (var entryStream = entry.Open())
-            {
-                await entryStream.WriteAsync(mizBytes.Result, 0, mizBytes.Result.Length);
-            }
-
-            var theatreEntry = zip.CreateEntry("theatre");
-            using (var theatreStream = theatreEntry.Open())
-            {   
-                byte[] bytes = System.Text.Encoding.UTF8.GetBytes(Theatre);
-                await theatreStream.WriteAsync(bytes, 0, bytes.Length);
-            }
+            File.WriteAllBytes(filePath, mizBytes.Result);
         }
     }
 }

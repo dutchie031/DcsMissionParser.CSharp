@@ -12,7 +12,7 @@ namespace DcsMissionParser.Net.Tests
         static string mission_output = "../../../../.ref/TestDrawings_MissionOuput";
 
 
-        static ParseResult<MizObject>? result;
+        static ParseResult<DcsMission>? result;
         static double duration = double.MaxValue;
 
         [AssemblyInitialize]
@@ -20,8 +20,14 @@ namespace DcsMissionParser.Net.Tests
         {
             long started = Stopwatch.GetTimestamp();
             byte[] bytes = File.ReadAllBytes(file);
-            result = await MissionSerializer.Deserialize(bytes);
+            result = await MizSerializer.Deserialize(bytes);
             duration =  Stopwatch.GetElapsedTime(started).TotalMilliseconds;
+
+            if (result?.Success != true) 
+            {
+                Assert.Fail(result?.FailureReason ?? "Unknown parsing failure");
+            }
+
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(result.Result, new Newtonsoft.Json.JsonSerializerSettings()
             {
                 Formatting = Newtonsoft.Json.Formatting.Indented,
@@ -54,7 +60,7 @@ namespace DcsMissionParser.Net.Tests
         [TestMethod]
         public async Task Serialize() 
         {
-            MizObject mizObject = result?.Result!;
+            DcsMission mizObject = result?.Result!;
 
             var parseResult = await MissionSerializer.Serialize(mizObject);
             if (!parseResult.Success) 

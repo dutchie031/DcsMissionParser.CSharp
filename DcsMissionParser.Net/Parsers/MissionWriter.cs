@@ -7,7 +7,7 @@ namespace DcsMissionParser.Net.Parsers
 {
     internal static class MissionWriter
     {
-        public static async Task<ParseResult<byte[]>> TryWriteAsync(MizObject mizObject)
+        public static async Task<ParseResult<byte[]>> TryWriteAsync(DcsMission mizObject)
         {
             StringWriter writer = new StringWriter();
             writer.WriteLine("mission = ");

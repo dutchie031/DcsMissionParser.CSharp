@@ -7,7 +7,7 @@ public sealed class SaveMissionTest
     [TestMethod]
     public async Task ExportDefaultMission()
     {
-        var mission = MizObject.CreateNewMission("Caucasus");
+        var mission = DcsMission.CreateNewMission("Caucasus");
         var miz = MissionSerializer.Serialize(mission);
 
         if(File.Exists("../../test.miz"))

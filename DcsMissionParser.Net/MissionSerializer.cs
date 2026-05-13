@@ -5,25 +5,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DcsMissionParser.Net
+namespace DcsMissionParser.Net;
+public class MissionSerializer
 {
-    public class MissionSerializer
+    public static async Task<ParseResult<byte[]>> Serialize(DcsMission mission)
     {
-        public static async Task<ParseResult<MizObject>> Deserialize(byte[] mizBytes) 
+        try
         {
-            return await MizParser.TryParse(mizBytes);
+            return await MissionWriter.TryWriteAsync(mission);
         }
-
-        public static async Task<ParseResult<byte[]>> Serialize(MizObject mizObject) 
+        catch (Exception ex)
         {
-            try
-            {
-                return await MissionWriter.TryWriteAsync(mizObject);
-            }
-            catch (Exception ex) 
-            {
-                return ParseResult<byte[]>.Fail($"Serialization failed: {ex.Message}");
-            }
+            return ParseResult<byte[]>.Fail($"Mission serialization failed: {ex.Message}");
+        }
+    }
+
+    public static async Task<ParseResult<DcsMission>> Deserialize(byte[] mizBytes)
+    {
+        try
+        {
+            return await MissionParser.TryParse(mizBytes);
+        }
+        catch (Exception ex)
+        {
+            return ParseResult<DcsMission>.Fail($"Mission deserialization failed: {ex.Message}");
+        }
+    }
+
+    public static async Task<ParseResult<DcsMission>> Deserialize(Stream stream)
+    {
+        try
+        {
+            //TODO: Optimize this by parsing directly from the stream instead of converting to byte array first.
+            return await MissionParser.TryParse(stream);
+        }
+        catch (Exception ex)
+        {
+            return ParseResult<DcsMission>.Fail($"Mission deserialization failed: {ex.Message}");
         }
     }
 }

@@ -9,9 +9,9 @@ namespace DcsMissionParser.Net;
 
 public class DefaultMission
 {
-    public static MizObject Create(string theatre)
+    public static DcsMission Create(string theatre)
     {
-        return new MizObject
+        return new DcsMission
         {
             Theatre = theatre,
             StartTime = 0,

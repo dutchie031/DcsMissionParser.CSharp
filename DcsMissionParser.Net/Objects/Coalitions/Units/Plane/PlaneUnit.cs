@@ -49,7 +49,11 @@ public class PlaneUnit
     public string Name { get; set; } = "Aerial-1-1";
 
     //TODO: Payload
-
     
+    /// <summary>
+    /// A unique identifier for the parsed object instance. <br>
+    /// Can be used to find and compare objects in case other identifiers like GroupId are not reliable due to changes in the mission. <br>
+    /// </summary>
+    public Guid RefId { get; } = Guid.NewGuid();
 
 }

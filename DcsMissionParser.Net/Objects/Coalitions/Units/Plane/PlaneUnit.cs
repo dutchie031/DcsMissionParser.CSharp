@@ -46,7 +46,7 @@ public class PlaneUnit
     public double Heading { get; set; }
 
     [LuaKey("name")]
-    public string Name { get; set; } = "Aerial-1-1";
+    public required string Name { get; set; }
 
     //TODO: Payload
     

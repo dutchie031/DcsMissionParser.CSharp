@@ -34,6 +34,12 @@ namespace DcsMissionParser.Net.Objects.Drawing
 
         [LuaKey("style")]
         public required string Style { get; set; }
+
+        /// <summary>
+        /// A unique identifier for the parsed object instance. <br>
+        /// Can be used to find and compare objects in case other identifiers like GroupId are not reliable due to changes in the mission. <br>
+        /// </summary>
+        public Guid RefId { get; } = Guid.NewGuid();
     }
 
     public enum PrimitiveType

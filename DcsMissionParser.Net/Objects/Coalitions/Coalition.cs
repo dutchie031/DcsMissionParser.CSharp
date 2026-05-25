@@ -22,5 +22,25 @@ namespace DcsMissionParser.Net.Objects.Coalitions
 
         [LuaKey("country")]
         public List<Country> Countries { get; set; } = [];
+
+        internal bool IsGroupNameExists(string groupName)
+        {
+            return Countries.Any(c => c.IsGroupNameExists(groupName));
+        }
+
+        internal bool IsUnitNameExists(string unitName)
+        {
+            return Countries.Any(c => c.IsUnitNameExists(unitName));
+        }
+
+        internal int GetMaxGroupId()
+        {
+            return Countries.Select(c => c.GetMaxGroupId()).DefaultIfEmpty(0).Max();
+        }
+
+        internal int GetMaxUnitId()
+        {
+            return Countries.Select(c => c.GetMaxUnitId()).DefaultIfEmpty(0).Max();
+        }
     }
 }

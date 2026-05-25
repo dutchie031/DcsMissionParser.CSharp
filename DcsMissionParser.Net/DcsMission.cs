@@ -54,6 +54,66 @@ namespace DcsMissionParser.Net
         //[LuaKey("failures")]
         //public Dictionary<object, Failure> Failures { get; set; } = [];
 
+
+        #region Helper Methods
+
+        /// <summary>
+        /// Checks if a group name exists in any coalition. <br>
+        /// May be expensive with large missions, no cache is used for correctness <br>
+        /// </summary>
+        /// <param name="grouName"></param>
+        /// <returns></returns>
+        public bool IsGroupNameExists(string grouName)
+        {
+            return Coalitions.IsGroupNameExists(grouName);
+        }
+
+        /// <summary>
+        /// Checks if a unit name exists in any coalition. <br>
+        /// May be expensive with large missions, no cache is used for correctness <br>
+        /// </summary>
+        /// <param name="unitName"></param>
+        /// <returns></returns>
+        public bool IsUnitNameExists(string unitName)
+        {
+            return Coalitions.IsUnitNameExists(unitName);
+        }
+
+
+        /// <summary>
+        /// Gets the next available group ID. <br>
+        /// </summary>
+        public int NextGroupId
+        {
+            get
+            {
+                if(field == -1)
+                {
+                    field = Coalitions.GetMaxGroupId() + 1;
+                }
+                return field++;
+            } 
+        } = -1;
+
+        /// <summary>
+        /// Gets the next available unit ID. <br>
+        /// </summary>
+        public int NextUnitId
+        {
+            get
+            {
+                if (field == -1)
+                {
+                    field = Coalitions.GetMaxUnitId() + 1;
+                }
+                return field++;
+            }
+        } = -1;
+
+
+        #endregion
+
+
         public static DcsMission CreateNewMission(string Theatre)
         {
             return DefaultMission.Create(Theatre);

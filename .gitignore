@@ -4,6 +4,8 @@
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
 .DS_Store
+**/*.DS_Store
+*.DS_Store
 
 .ref/TestDrawings_MissionOuput
 .ref/TestDrawings_ParseOutput.json

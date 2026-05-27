@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json.Serialization;
+using DcsMissionParser.Net.Annotations.JsonConverters;
 
 namespace DcsMissionParser.Net.Annotations
 {
+    [JsonConverter(typeof(StringEnumJsonConverterFactory))]
     public abstract class StringEnum : IEquatable<StringEnum>
     {
         public string Value { get; }

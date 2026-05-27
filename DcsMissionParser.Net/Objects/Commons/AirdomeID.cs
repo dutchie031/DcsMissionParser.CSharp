@@ -1,4 +1,6 @@
+using System.Text.Json.Serialization;
 using DcsMissionParser.Net.Annotations;
+using DcsMissionParser.Net.Annotations.JsonConverters;
 
 namespace DcsMissionParser.Net.Objects.Commons;
 
@@ -8,6 +10,7 @@ public abstract class AirdromeId : IntEnum
     internal AirdromeId(int value) : base(value) {}
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class CaucasusAirdromeId : AirdromeId
 {
     private CaucasusAirdromeId(int value) : base(value) {}
@@ -36,6 +39,7 @@ public class CaucasusAirdromeId : AirdromeId
 
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class NevadaAirdromeId : AirdromeId
 {
     private NevadaAirdromeId(int value) : base(value) {}
@@ -58,6 +62,7 @@ public class NevadaAirdromeId : AirdromeId
     public static readonly NevadaAirdromeId TonopahTestRangeAirfield = new(18);
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class NormandyAirdromeId : AirdromeId
 {
     private NormandyAirdromeId(int value) : base(value) {}
@@ -133,6 +138,7 @@ public class NormandyAirdromeId : AirdromeId
     public static readonly NormandyAirdromeId SaintAndreDeLEure = new(70);
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class PersianGulfAirdromeId : AirdromeId
 {
     private PersianGulfAirdromeId(int value) : base(value) {}
@@ -168,6 +174,7 @@ public class PersianGulfAirdromeId : AirdromeId
     public static readonly PersianGulfAirdromeId LiwaAFB = new(29);
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class TheChannelAirdromeId : AirdromeId
 {
     private TheChannelAirdromeId(int value) : base(value) {}
@@ -183,6 +190,7 @@ public class TheChannelAirdromeId : AirdromeId
     public static readonly TheChannelAirdromeId HighHalden = new(12);
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class SyriaAirdromeId : AirdromeId
 {
     private SyriaAirdromeId(int value) : base(value) {}
@@ -254,6 +262,7 @@ public class SyriaAirdromeId : AirdromeId
     public static readonly SyriaAirdromeId MuwaffaqSalti = new(68);
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class MarianasIslandAirdromeId : AirdromeId
 {
     private MarianasIslandAirdromeId(int value) : base(value) {}
@@ -268,6 +277,7 @@ public class MarianasIslandAirdromeId : AirdromeId
     public static readonly MarianasIslandAirdromeId NorthWestField = new(8);
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class SouthAtlanticAirdromeId : AirdromeId
 {
     private SouthAtlanticAirdromeId(int value) : base(value) {}
@@ -302,6 +312,7 @@ public class SouthAtlanticAirdromeId : AirdromeId
     public static readonly SouthAtlanticAirdromeId GullPoint = new(29);
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class SinaiAirdromeId : AirdromeId
 {
     private SinaiAirdromeId(int value) : base(value) {}
@@ -353,6 +364,7 @@ public class SinaiAirdromeId : AirdromeId
     public static readonly SinaiAirdromeId Quwaysina = new(45);
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class KolaAirdromeId : AirdromeId
 {
     private KolaAirdromeId(int value) : base(value) {}
@@ -372,6 +384,7 @@ public class KolaAirdromeId : AirdromeId
     public static readonly KolaAirdromeId Kalixfors = new(13);
 }
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public class GermanyCWAirdromeId : AirdromeId
 {
     private GermanyCWAirdromeId(int value) : base(value) {}

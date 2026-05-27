@@ -1,8 +1,11 @@
 using System;
 using System.Reflection;
+using System.Text.Json.Serialization;
+using DcsMissionParser.Net.Annotations.JsonConverters;
 
 namespace DcsMissionParser.Net.Annotations;
 
+[JsonConverter(typeof(IntEnumJsonConverterFactory))]
 public abstract class IntEnum : IEquatable<IntEnum>
 {
     public int Value { get; }

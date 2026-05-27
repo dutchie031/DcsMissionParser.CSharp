@@ -1,6 +1,8 @@
 using System;
+using System.Text.Json.Serialization;
 using DcsMissionParser.Net.Annotations;
 using DcsMissionParser.Net.Annotations;
+using DcsMissionParser.Net.Annotations.JsonConverters;
 using DcsMissionParser.Net.Objects.Coalitions.Routes.Plane.Tasks;
 using DcsMissionParser.Net.Objects.Commons;
 
@@ -46,10 +48,11 @@ public class Point
 
     [LuaKey("task")]
     public PointTask Task { get; set; } = new ComboTask();
-    
+
     public Guid RefId { get; set; } = Guid.NewGuid();
 }
 
+[JsonConverter(typeof(StringEnumJsonConverterFactory))]
 public class Action : StringEnum
 {
     private Action(string value) : base(value) { }

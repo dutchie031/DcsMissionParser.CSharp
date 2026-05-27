@@ -1,9 +1,12 @@
 using System;
+using System.Text.Json.Serialization;
 using DcsMissionParser.Net.Annotations;
+using DcsMissionParser.Net.Annotations.JsonConverters;
 using DcsMissionParser.Net.Objects.Commons;
 
 namespace DcsMissionParser.Net.Objects.Coalitions.Units.Plane;
 
+[JsonConverter(typeof(StringEnumJsonConverterFactory))]
 public class PlaneType : StringEnum
 {
     private PlaneType(string value) : base(value) {}

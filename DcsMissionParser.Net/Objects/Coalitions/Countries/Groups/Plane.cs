@@ -1,4 +1,5 @@
 ﻿using DcsMissionParser.Net.Annotations;
+using DcsMissionParser.Net.Annotations.JsonConverters;
 using DcsMissionParser.Net.Objects.Coalitions.Routes.Plane;
 using DcsMissionParser.Net.Objects.Coalitions.Units.Plane;
 using DcsMissionParser.Net.Objects.Commons;
@@ -6,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace DcsMissionParser.Net.Objects.Coalitions.Countries.Groups
@@ -64,7 +66,7 @@ namespace DcsMissionParser.Net.Objects.Coalitions.Countries.Groups
         public Guid RefId { get; } = Guid.NewGuid();
     }
 
-    
+    [JsonConverter(typeof(StringEnumJsonConverterFactory))]
     public class PlaneTasking : StringEnum
     {
         private PlaneTasking(string value) : base(value) {}

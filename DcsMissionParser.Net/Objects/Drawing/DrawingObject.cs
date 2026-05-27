@@ -1,10 +1,21 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using DcsMissionParser.Net.Annotations;
 using DcsMissionParser.Net.Objects.Commons;
 using Lua;
 
 namespace DcsMissionParser.Net.Objects.Drawing
 {
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
+    [JsonDerivedType(typeof(Circle), nameof(PrimitiveType.Polygon) + "_" + nameof(PolygonMode.Circle))]
+    [JsonDerivedType(typeof(Free), nameof(PrimitiveType.Polygon) + "_" + nameof(PolygonMode.Free))]
+    [JsonDerivedType(typeof(Oval), nameof(PrimitiveType.Polygon) + "_" + nameof(PolygonMode.Oval))]
+    [JsonDerivedType(typeof(Rect), nameof(PrimitiveType.Polygon) + "_" + nameof(PolygonMode.Rect))]
+    [JsonDerivedType(typeof(Arrow), nameof(PrimitiveType.Polygon) + "_" + nameof(PolygonMode.Arrow))]
+    [JsonDerivedType(typeof(Segment), nameof(PrimitiveType.Line) + "_" + nameof(LineMode.Segment))]
+    [JsonDerivedType(typeof(Segments), nameof(PrimitiveType.Line) + "_" + nameof(LineMode.Segments))]
+    [JsonDerivedType(typeof(FreeLine), nameof(PrimitiveType.Line) + "_" + nameof(LineMode.Free))]
+    [JsonDerivedType(typeof(TextBox), nameof(PrimitiveType.TextBox))]
     public abstract class DrawingObject
     {
         [AsString]

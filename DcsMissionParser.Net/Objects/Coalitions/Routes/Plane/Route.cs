@@ -7,5 +7,5 @@ public class Route
 {
     [LuaKey("points")]
     public List<Point> Points { get; set; } = [];
-    
+    public Guid RefId { get; set; } = Guid.NewGuid();
 }

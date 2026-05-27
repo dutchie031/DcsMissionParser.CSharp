@@ -46,7 +46,8 @@ public class Point
 
     [LuaKey("task")]
     public PointTask Task { get; set; } = new ComboTask();
-
+    
+    public Guid RefId { get; set; } = Guid.NewGuid();
 }
 
 public class Action : StringEnum

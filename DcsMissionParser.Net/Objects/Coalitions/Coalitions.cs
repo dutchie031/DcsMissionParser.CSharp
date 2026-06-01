@@ -18,6 +18,8 @@ namespace DcsMissionParser.Net.Objects.Coalitions
         [LuaKey("blue")]
         public Coalition Blue { get; set; } = new Coalition();
 
+        public IEnumerable<Coalition> All => [Neutrals, Red, Blue];
+
         internal bool IsGroupNameExists(string groupName)
         {
             return 

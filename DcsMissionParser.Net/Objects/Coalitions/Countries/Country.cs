@@ -35,12 +35,12 @@ namespace DcsMissionParser.Net.Objects.Coalitions.Countries
 
         internal int GetMaxGroupId()
         {
-            return Planes.Groups.Max(g => g.GroupId);
+            return Planes.Groups.Select(g => g.GroupId).DefaultIfEmpty(0).Max();
         }
 
         internal int GetMaxUnitId()
         {
-            return Planes.Groups.SelectMany(g => g.Units).Max(u => u.UnitId);
+            return Planes.Groups.SelectMany(g => g.Units).Select(u => u.UnitId).DefaultIfEmpty(0).Max();
         }
 
     }

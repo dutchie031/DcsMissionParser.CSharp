@@ -20,26 +20,47 @@ namespace DcsMissionParser.Net.Parsers
             return target.IsGenericType && target.GetGenericTypeDefinition() == typeof(List<>);
         }
 
-        private static void WriteLineIndent(this StringWriter sw, string text, int indentation) 
+        private static void WriteLineIndent(this StringWriter sw, string text, int indentation)
         {
             for (int i = 0; i < indentation; i++)
                 sw.Write("\t");
             sw.WriteLine(text);
         }
 
-        private static void WriteIndent(this StringWriter sw, string text, int indentation) 
+        private static void WriteIndent(this StringWriter sw, string text, int indentation)
         {
-
             for (int i = 0; i < indentation; i++)
                 sw.Write("\t");
             sw.Write(text);
         }
 
-        private static void WriteObjectAsLuaString(object? instance, StringWriter sw, int indentation = 0, AsStringAttribute? asStringAttribute = null) 
+        /// <summary>
+        /// Escapes special characters in a string for Lua string literals.
+        /// Handles all escape sequences defined in Lua 5.1 specification (§2.1).
+        /// </summary>
+        private static string EscapeLuaString(string str)
         {
-            if (instance == null) 
+            if (str == null)
+                return string.Empty;
+
+            return str
+                .Replace("\\", "\\\\")  // MUST BE FIRST to avoid double-escaping!
+                .Replace("\"", "\\\"")  // Double quote
+                .Replace("\n", "\\n")   // Newline
+                .Replace("\r", "\\r")   // Carriage return
+                .Replace("\t", "\\t")   // Tab
+                .Replace("\a", "\\a")   // Bell
+                .Replace("\b", "\\b")   // Backspace
+                .Replace("\f", "\\f")   // Form feed
+                .Replace("\v", "\\v")   // Vertical tab
+                .Replace("\0", "\\0");  // Null
+        }
+
+        private static void WriteObjectAsLuaString(object? instance, StringWriter sw, int indentation = 0, AsStringAttribute? asStringAttribute = null)
+        {
+            if (instance == null)
             {
-               sw.WriteLine(" nil, \n");
+                sw.WriteLine(" nil, \n");
                 return;
             }
 
@@ -69,26 +90,26 @@ namespace DcsMissionParser.Net.Parsers
             }
             else if (type == typeof(string))
             {
-                sw.WriteLine($"\"{instance}\",");
+                sw.WriteLine($"\"{EscapeLuaString((string)instance)}\",");
             }
-            else if (type.IsEnum) 
+            else if (type.IsEnum)
             {
                 if (asStringAttribute != null && asStringAttribute.ToLower)
-                    sw.WriteLine($"\"{instance.ToString()?.ToLower()}\",", indentation);
+                    sw.WriteLine($"\"{EscapeLuaString(instance.ToString()?.ToLower() ?? "")}\",");
                 else if (asStringAttribute != null)
-                    sw.WriteLine($"\"{instance}\",", indentation);
+                    sw.WriteLine($"\"{EscapeLuaString(instance.ToString() ?? "")}\",");
                 else
-                    sw.WriteLine($"{(int)instance},", indentation);
+                    sw.WriteLine($"{(int)instance},");
             }
-            else if(typeof(IntEnum).IsAssignableFrom(type))
+            else if (typeof(IntEnum).IsAssignableFrom(type))
             {
                 IntEnum intEnum = (IntEnum)instance;
-                sw.WriteLine($"{intEnum.Value},", indentation);
+                sw.WriteLine($"{intEnum.Value},");
             }
-            else if(typeof(StringEnum).IsAssignableFrom(type))
+            else if (typeof(StringEnum).IsAssignableFrom(type))
             {
                 StringEnum stringEnum = (StringEnum)instance;
-                sw.WriteLine($"\"{stringEnum.Value}\",", indentation);
+                sw.WriteLine($"\"{EscapeLuaString(stringEnum.Value)}\",");
             }
             else if (type.IsClass)
             {
@@ -100,18 +121,18 @@ namespace DcsMissionParser.Net.Parsers
                         continue;
 
                     AsStringAttribute? localAsStringAttribute = null;
-                    if(property.PropertyType.IsEnum)
+                    if (property.PropertyType.IsEnum)
                         localAsStringAttribute = property.GetCustomAttribute<AsStringAttribute>();
 
                     object? value = property.GetValue(instance);
 
-                    sw.WriteIndent($"[\"{attribute.Name}\"] = ", indentation);
+                    sw.WriteIndent($"[\"{EscapeLuaString(attribute.Name)}\"] = ", indentation);
                     WriteObjectAsLuaString(value, sw, indentation + 1, asStringAttribute: localAsStringAttribute);
                 }
                 if (indentation != 1)
-                    sw.WriteLineIndent("},", indentation -1);
-                else 
-                    sw.WriteLineIndent("}", indentation  -1);
+                    sw.WriteLineIndent("},", indentation - 1);
+                else
+                    sw.WriteLineIndent("}", indentation - 1);
             }
         }
     }

@@ -48,7 +48,7 @@ namespace DcsMissionParser.Net
         /// It signals a "state" of the identifiers in all other objects. <br>
         /// If the ParserId has changed all other identifiers should be considered invalid and should not be used for comparison or reference.
         /// </summary>
-        public Guid ParserId { get; } = Guid.NewGuid();
+        public Guid ParserId { get; init; } = Guid.NewGuid();
 
         //Currently a cursed dictionary that contains integers, strings and strings like "20" as keys.
         //[LuaKey("failures")]
